@@ -9,7 +9,7 @@ if (!$conn) {
 ?>
 
 <head>
-    <title>Trang Chủ</title>
+    <title>Book Store</title>
 </head>
 <!-- content -->
 <div class="content">
