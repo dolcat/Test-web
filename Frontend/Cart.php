@@ -31,7 +31,7 @@
 					</tr>
 					<tr>
 					  <td ><img src="images/db4f09b6ee8bc317f097ebcca1933a2d.png.webp" alt="" width="130px" height="130px"></td>
-					  <td><p>Kế Toán Vỉa Hè Banana- Thực Hành Báo Cáo Tài Chính Căn Bản Từ Quầy Bán Nước Chanh</p></td>
+					  <td><p>Kế Toán Vỉa Hè - Thực Hành Báo Cáo Tài Chính Căn Bản Từ Quầy Bán Nước Chanh</p></td>
 					  <td><input type=number value="1" min="1"</td>
 					  <td><p>169.000 <sub>đ</sub></p></td>
 					  <td align="center"><span>X</span></td>
