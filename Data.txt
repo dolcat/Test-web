@@ -1,0 +1,7 @@
+book_list(ID_book, ID_bookstore, Title, Author, Type, Translator, Publisher, Size, Cover_type, Number_of_pages, Publication_date, Describe, Img, Price)
+account(ID_TK, User, Password)
+customer(ID_customer, ID_TK, Name, Sex, Phone, Address, Email)
+cart(ID_cart, ID_customer, ID_book)
+order(ID_order, ID_customer, ID_book, Booking_date)
+bookstore(ID_bookstore, Phone, Email, Address)
+pay(ID_pay, ID_order, Payment_method, Total_amount, Status)
