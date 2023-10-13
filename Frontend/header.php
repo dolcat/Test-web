@@ -90,9 +90,9 @@
                         </button>
                     </div>
                 </form>
-                <div class="header_icon header_profile">
+                <a class="header_icon header_profile" href="profile.php">
                     <i class="header-icon-item fa-solid fa-house-user"></i>
-                </div>
+                </a>
                 <a class="header_icon header_cart" href="Cart.php">
                     <i class="header-icon-item fa-solid fa-cart-shopping"></i>
                 </a>
