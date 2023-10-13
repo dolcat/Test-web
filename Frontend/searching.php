@@ -84,7 +84,7 @@ if(isset($_COOKIE['danhmuc'])){
                                             <span class="home-product-item_discount">30%</span>
                                         </div>
                                         <div class="home-product-item_publisher_author">
-                                            <span class="home-product-item_publisher"><?php echo $row['id_bookstore'] ?></span>
+                                            <span class="home-product-item_publisher"><?php echo $row['bookstore'] ?></span>
                                             <span class="home-product-item_author"><?php echo $row['author'] ?></span>
                                         </div>
                                     </div>

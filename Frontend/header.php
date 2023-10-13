@@ -63,7 +63,7 @@
             <!-- Header with search -->
             <div class="header_with_search" style="display: inline-flex; height: 81px;">
                 <div class="header-logo">
-                    <a href="fanpages.php" class="header_search-logo">
+                    <a href="index.php" class="header_search-logo">
                         <img class="logo" style="width: 100px; margin-left: 0;" src="https://png.pngtree.com/template/20191011/ourmid/pngtree-e-book-logo-design---modern-technology-image_317099.jpg" alt="logo">
                     </a>
                 </div>

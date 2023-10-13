@@ -123,7 +123,7 @@ $row = mysqli_fetch_array($query);
                                 <div class="detail_info_column">
                                     <div class="info_column">
                                         <span>Công ty phát hành</span>
-                                        <span><?php echo $row['id_bookstore'] ?></span>
+                                        <span><?php echo $row['bookstore'] ?></span>
                                     </div>
                                 </div>
                                 <div class="detail_info_column">
