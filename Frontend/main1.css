@@ -56,9 +56,7 @@
 	text-align: center;
 	margin-left: 20px;
 }
-.cart-content-left img{
-	
-}
+
 .cart-content-left table th{
 	padding-bottom: 30px;
 	font-size: 12px;
@@ -82,7 +80,7 @@
 	cursor: pointer;
 }
 .cart-content-left table td{
-	pading: 20px 0;
+	padding: 20px 0;
 	border-bottom: 2px solid #dddddd;
 }
 .cart-conten-left td:first-child img{
@@ -195,10 +193,6 @@
 }
 .payment-top-item i {
 	color: #dddddd;
-}
-
-.payment-content-left-method-delivery{
-	
 }
 
 .payment-top-payment{
