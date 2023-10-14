@@ -1,6 +1,5 @@
 <?php include("header.php");
 ?>
-	<!---------------------- Cart --------------------->
 	<?php
 	$count = 0;
 	$conn=mysqli_connect("localhost","root","") or die ("Không connect đc với máy chủ");
@@ -11,17 +10,17 @@
 	$result_cart=mysqli_query($conn,$sql_select_cart);
 	$tong_bg=mysqli_num_rows($result_cart);// đếm số bản ghi
 		//echo $tong_bg; die;
-	$stt_book=0;
+	$stt_cart=0;
 	$tong_tien = 0;
 	while($row=mysqli_fetch_object($result_cart))
 	{
-		$stt_book++;
-		$ID_book[$stt_book]=$row->ID_book;
-		$img[$stt_book]=$row->img;
-		$title[$stt_book]=$row->title;
-		$price[$stt_book]=$row->price;
-		$number_cart[$stt_book] = $row->number_cart;
-		$Total_price[$stt_book] = $row->Total_price;
+		$stt_cart++;
+		$ID_cart[$stt_cart]=$row->ID_cart;
+		$img[$stt_cart]=$row->img;
+		$title[$stt_cart]=$row->title;
+		$price[$stt_cart]=$row->price;
+		$number_cart[$stt_cart] = $row->number_cart;
+		$Total_price[$stt_cart] = $row->Total_price;
 	}
 	?>
 	<section class = "cart">
@@ -61,7 +60,7 @@
       	<td></td>
       	<td><?php echo $title[$i]?></td>
 		<td><?php echo $price[$i] ?></td>
-		<td><a href="Cart_del.php?id=<?php echo $ID_book[$i]?>">Xóa</a></td>
+		<td><a href="Cart_del.php?ID_cart=<?php echo $ID_cart[$i]?>">Xóa</a></td>
     </tr>
 	  <?php
 	  }
