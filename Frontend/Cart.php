@@ -1,6 +1,27 @@
 <?php include("header.php");
 ?>
 	<!---------------------- Cart --------------------->
+	<?php
+	$count = 0;
+	$conn=mysqli_connect("localhost","root","") or die ("Không connect đc với máy chủ");
+	//Chọn CSDL để làm việc
+	mysqli_select_db($conn,"qlsach") or die ("Không tìm thấy CSDL");
+	//Tạo câu truy vấn
+	$sql_select_cart="Select * from `cart`, `book_list` where `cart`.`ID_book` = `book_list`.`ID_book`";
+	$result_cart=mysqli_query($conn,$sql_select_cart);
+	$tong_bg=mysqli_num_rows($result_cart);// đếm số bản ghi
+		//echo $tong_bg; die;
+	$stt_book=0;
+	while($row=mysqli_fetch_object($result_cart))
+	{
+		$stt_book++;
+		$ID_book[$stt_book]=$row->ID_book;
+		$img[$stt_book]=$row->img;
+		$title[$stt_book]=$row->title;
+		$price[$stt_book]=$row->price;
+		$number_cart[$stt_book] = $row->number_cart;
+	}
+	?>
 	<section class = "cart">
 	<div class="container">
 		<div class="cart-top-wrap">
@@ -23,26 +44,26 @@
 				<table width="883" border="1">
 				  <tbody>
 					<tr>
+						<th >STT</th>
 					  <th width="128" >Ảnh sản phẩm</th>
 					  <th width="509" >Tên sản phẩm</th>
-					  <th width="100" >Số lượng</th>
-					  <th width="79" >Thành tiền</th>
+					  <th width="79" >Giá sản phẩm</th>
 					  <th width="33" >Xóa</th>
 					</tr>
-					<tr>
-					  <td ><img src="images/db4f09b6ee8bc317f097ebcca1933a2d.png.webp" alt="" width="130px" height="130px"></td>
-					  <td><p>Kế Toán Vỉa Hè - Thực Hành Báo Cáo Tài Chính Căn Bản Từ Quầy Bán Nước Chanh</p></td>
-					  <td><input type=number value="1" min="1"</td>
-					  <td><p>169.000 <sub>đ</sub></p></td>
-					  <td align="center"><span>X</span></td>
-					</tr>
-					  <tr>
-					  <td><img src="images/61fb657f347d14d9d7bf6fe901001a8e.jpg.webp" alt="" width="130px" height="130px"></td>
-					  <td><p>Sách Đi Tìm Lẽ Sống (Tái Bản )</p></td>
-					  <td><input type=number value="1" min="1"</td>
-					  <td><p>61.100 <sub>đ</sub></p></td>
-					  <td align="center"><span>X</span></td>
-					</tr>
+					<?php
+	  for ($i=1;$i<=$tong_bg;$i++)
+	  {
+	  ?>
+    <tr>
+      	<td><?php echo $i;?></td>
+      	<td></td>
+      	<td><?php echo $title[$i]?></td>
+		<td><?php echo $price[$i] ?></td>
+		<td><a href="Cart_del.php?id=<?php echo $ID_book[$i]?>">Xóa</a></td>
+    </tr>
+	  <?php
+	  }
+	  ?>
 				  </tbody>
 				</table>
 			</div>
@@ -53,31 +74,29 @@
 					</tr>
 					<tr>
 						<td>Tổng sản phẩm</td>
-						<td>2</td>
+						<td><?php echo $tong_bg ?></td>
 					</tr>
 					<tr>
 						<td>Tổng tiền hàng</td>
-						<td><p>230.100 <sub>đ</sub></p></td>
-					</tr>
-					<tr>
-						<td>Tạm tính</td>
-						<td><p style="color: black; font-weight: bold">230.100 <sub>đ</sub></p></td>
+						<td><p><?php for($i=1;$i<=$tong_bg;$i++){ echo $number_cart[$i]*$price[$i]; }?> VNĐ</p></td>
 					</tr>
 				</table>
 				<div class="cart-content-right-text">
-					<p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 đ</p>
-					<p stype="color: red; font-weight: bold">Mua thêm <span style="font-size: 18px">1.769.900đ</span>để được miễn phí ship</p>
+<!--					<p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>-->
+					<?php
+						$tong_tien = 0;
+						for($i=1;$i<=$tong_bg;$i++){ echo $tong_tien = $number_cart[$i]*$price[$i];}
+						if($tong_tien > 2000000){ ?>
+							<p>Bạn sẽ được miễn phí ship vì đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>
+						<?php }
+						else{ ?>
+							<p stype="color: red; font-weight: bold">Mua thêm <span style="font-size:18px"><?php 2000000 - $tong_tien ?> </span> VNĐ để được miễn phí ship</p>
+						<?php } ?>
 				</div>
 				<div class="cart-content-right-button">
 					<a href="fanpages.php"><button>TIẾP TỤC MUA SẮM</button></a>
 					<a href="Pay.php"><button>THANH TOÁN</button></a>
 				</div>
-<!--
-				<div class="cart-content-right-dangnhap">
-					<p>TÀI KHOẢN</p> <br>
-					<p>Hãy<a href=""> Đăng nhập </a>tài khoản của bạn để tích điểm thành viên</p>
-				</div>
--->
 			</div>
 		</div>	
 	</div>
