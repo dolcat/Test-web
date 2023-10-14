@@ -12,6 +12,7 @@
 	$tong_bg=mysqli_num_rows($result_cart);// đếm số bản ghi
 		//echo $tong_bg; die;
 	$stt_book=0;
+	$tong_tien = 0;
 	while($row=mysqli_fetch_object($result_cart))
 	{
 		$stt_book++;
@@ -20,6 +21,7 @@
 		$title[$stt_book]=$row->title;
 		$price[$stt_book]=$row->price;
 		$number_cart[$stt_book] = $row->number_cart;
+		$Total_price[$stt_book] = $row->Total_price;
 	}
 	?>
 	<section class = "cart">
@@ -78,14 +80,14 @@
 					</tr>
 					<tr>
 						<td>Tổng tiền hàng</td>
-						<td><p><?php for($i=1;$i<=$tong_bg;$i++){ echo $number_cart[$i]*$price[$i]; }?> VNĐ</p></td>
+						<td><p><?php for($i=1;$i<=$tong_bg;$i++){ echo $tong_tien+=$Total_price[$i]; }?> VNĐ</p></td>
 					</tr>
 				</table>
 				<div class="cart-content-right-text">
 <!--					<p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>-->
 					<?php
 						$tong_tien = 0;
-						for($i=1;$i<=$tong_bg;$i++){ echo $tong_tien = $number_cart[$i]*$price[$i];}
+						for($i=1;$i<=$tong_bg;$i++){ echo $tong_tien += $Total_price[$i] ;}
 						if($tong_tien > 2000000){ ?>
 							<p>Bạn sẽ được miễn phí ship vì đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>
 						<?php }
