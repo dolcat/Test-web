@@ -65,7 +65,7 @@ $query = mysqli_query($conn, $sql);
                         <tbody>
                             <?php while ($row = mysqli_fetch_array($query)) { ?>
                                 <tr>
-                                    <td class="id_column" style="width: 20px;"><?php echo $row['id_book'] ?></td>
+                                    <td class="id_column id_book" style="width: 20px;"><?php echo $row['id_book'] ?></td>
                                     <td class="tieude_column" style="width: 100px;"><?php echo $row['title'] ?></td>
                                     <td class="col-md-1"><?php echo $row['author'] ?></td>
                                     <td class="col-md-1"><?php echo $row['ten_danhmuc'] ?></td>
@@ -78,8 +78,9 @@ $query = mysqli_query($conn, $sql);
                                     <td class="col-md-1"><?php echo $row['publication_of_date'] ?></td>
                                     <td class="col-md-1"><?php echo $row['price'] ?></td>
                                     <td class="col-md-1">
-                                        <a href=""> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
-                                        <a href=""><button class="btn btn-danger" data-confirm="Bạn có chắc chắn muốn xóa?">Xóa</button></a>
+                                        <a href="changeBook.php?id_book=<?php echo $row['id_book'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
+                                        <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
+                                        
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -89,6 +90,20 @@ $query = mysqli_query($conn, $sql);
         </div>
     </div>
 </div>
+
+
+<script>
+    var id = document.querySelector(".id_book");
+    function btn_delete() {
+        var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
+        if(response == true){
+            var id_book = parseInt(id.innerText);
+            var link ="executeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            window.location.href = link;
+        }
+    }
+</script>
 </body>
+
 
 </html>
