@@ -9,7 +9,7 @@ $query = mysqli_query($conn, $sql);
     <title>Trang chủ Admin</title>
 </head>
 
-<div class="container" style="width: 100%;">
+<div class="container" style="width: 100%; margin-bottom: 100px;">
     <div class="row">
         <div class="col-md-12">
             <div class="tool_bar">
@@ -27,7 +27,7 @@ $query = mysqli_query($conn, $sql);
                         <a href="#">Quản lý tài khoản</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#"><button class="btn_seaching">Thêm sản phẩm</button></a>
+                        <a href="insertBook.php"><button class="btn_seaching">Thêm sản phẩm</button></a>
                     </li>
                 </ul>
 
@@ -57,7 +57,7 @@ $query = mysqli_query($conn, $sql);
                                 <th class="col-md-1">Kích thước</th>
                                 <th class="col-md-1">Loại bìa</th>
                                 <th class="col-md-1">Số trang</th>
-                                <th class="col-md-2">Ngày xuất bản</th>
+                                <th class="col-md-3">Ngày xuất bản</th>
                                 <th class="col-md-1">Giá tiền</th>
                                 <th class="col-md-1">Chức năng</th>
                             </tr>
@@ -78,7 +78,7 @@ $query = mysqli_query($conn, $sql);
                                     <td class="col-md-1"><?php echo $row['publication_of_date'] ?></td>
                                     <td class="col-md-1"><?php echo $row['price'] ?></td>
                                     <td class="col-md-1">
-                                        <a href=""> <button class="btn btn-primary" type="submit">Sửa</button></a>
+                                        <a href=""> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
                                         <a href=""><button class="btn btn-danger" data-confirm="Bạn có chắc chắn muốn xóa?">Xóa</button></a>
                                     </td>
                                 </tr>

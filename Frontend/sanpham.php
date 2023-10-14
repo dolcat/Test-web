@@ -170,7 +170,7 @@ $row = mysqli_fetch_array($query);
                             </div>
                             <div class="summary_text">
                                 <div class="summary_detail">
-                                    <?php echo $row['describes'] ?>
+                                    <?php echo $row['description'] ?>
                                 </div>
                             </div>
                         </div>

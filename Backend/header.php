@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("connect.php");
 
 ?>
@@ -15,9 +15,9 @@ include("connect.php");
 <body style="background-color: #F5F5FA;">
     <header class="header">
         <div class="row">
-            <div class="col-md-2">
+            <a class="col-md-2" href="index.php">
                 <img src="https://png.pngtree.com/template/20191011/ourmid/pngtree-e-book-logo-design---modern-technology-image_317099.jpg" class="img-fluid">
-            </div>
+            </a>
             <div class="col-md-10">
                 <h1 class="display-4 heading" style="color: white;">ADMIN BOOK STORE</h1>
             </div>
