@@ -7,7 +7,7 @@ if(isset($_GET['id_book'])){
     $sqlDeleteBook = "DELETE FROM `book_list` WHERE id_book = '$id_book'";
     $check = mysqli_query($conn, $sqlDeleteBook);
     if($check == true){
-        
+        mysqli_close($conn);
         header("location: index.php");
 
     }

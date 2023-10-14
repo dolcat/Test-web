@@ -1,12 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-	<?php
+<?php
 	$user1=$_REQUEST["user"];
 	$pass1=$_REQUEST["pass"];
 	$conn=mysqli_connect("localhost","root","") or die ("Không connect đc với máy chủ");
@@ -30,7 +22,3 @@ while($row=mysqli_fetch_object($result_login))
 		header("Location: Login.php");
 	}
 }
-	
-	?>
-</body>
-</html>

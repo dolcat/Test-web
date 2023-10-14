@@ -39,7 +39,7 @@ $query_book = mysqli_query($conn, $sql);
                         ?>
                         <select class="form-control" name="danhmuc">
                             <?php while ($danhMuc =  mysqli_fetch_array($query)) { ?>
-                                <option value="<?php echo $danhMuc['id_danhmuc'] ?>"><?php echo $danhMuc['ten_danhmuc'] ?></option>
+                                <option value="<?php echo $danhMuc['id_danhmuc'] ?>" class="danhmuc"><?php echo $danhMuc['ten_danhmuc'] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -90,3 +90,5 @@ $query_book = mysqli_query($conn, $sql);
         </div>
     </div>
 </div>
+
+</body>

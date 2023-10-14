@@ -25,9 +25,10 @@ if (isset($_POST['title']) && isset($_REQUEST['id_book'])){
     $check = mysqli_query($conn, $sql_insert);
     
     if($check){
+        mysqli_close($conn);
         header("Location:index.php");
+        
     }
-    mysqli_close($conn);
 
 } else {
     echo "Cant execute!";
