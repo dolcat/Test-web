@@ -115,3 +115,40 @@
 .btn_seaching{
   background-color: #206bdc;
 }
+
+
+.list-inline-item a{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.tool_bar {
+  align-items: center;
+  -webkit-box-align: center;
+
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.btn_seaching {
+  background-color: #206bdc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 150px;
+  height: 36px;
+
+}

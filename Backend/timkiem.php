@@ -1,14 +1,19 @@
 <?php
 include("header.php");
+$string = "";
+if (isset($_GET['txt_searching'])) {
+    $string = $_GET['txt_searching'];
+}
 
-$sql = "SELECT * FROM `book_list`,danh_muc WHERE book_list.id_danhmuc = danh_muc.id_danhmuc;";
+$sql = "SELECT * FROM `book_list` 
+JOIN danh_muc ON danh_muc.id_danhmuc = book_list.id_danhmuc 
+WHERE  id_book LIKE '%$string%' title LIKE '%$string%' OR danh_muc.ten_danhmuc LIKE '%$string%' OR bookstore LIKE '%$string%' OR publisher LIKE '%$string%' OR author LIKE '%$string%' OR translator LIKE '%$string%' ;";
 $query = mysqli_query($conn, $sql);
 ?>
 
 <head>
-    <title>Trang chủ Admin</title>
+    <title>Tìm kiếm</title>
 </head>
-
 <div class="container" style="width: 100%;">
     <div class="row">
         <div class="col-md-12">
@@ -32,7 +37,7 @@ $query = mysqli_query($conn, $sql);
                 </ul>
 
                 <div class="form_searching">
-                    <form class="form-inline" action="timkiem.php" method="get">
+                    <form class="form-inline" action="index.php" method="get">
                         <input type="text" class="form-control me-2 d-inline-block" placeholder="Tìm kiếm..." name="txt_searching">
                         <button type="submit" class="btn_seaching">Tìm kiếm</button>
                     </form>
