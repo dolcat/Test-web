@@ -34,6 +34,7 @@
 					<th>Số lượng</th>
 					<th>Đơn giá</th>
 					<th>Thành tiền</th>
+					<th>Xem chi tiết sản phẩm</th>
 				  </tr>
 					<?php
 	  for ($i=1;$i<=$tong_bg;$i++)
@@ -46,6 +47,7 @@
 		<td><?php echo $number_cart[$i] ?></td>
 		<td><?php echo $price[$i] ?></td>
 		<td><?php echo $Total_price[$i]?></td>
+		<td><a href="?id=<?php echo $ID_book[$i]?>">Xem</a></td>
     </tr>
 	  <?php
 	  }
