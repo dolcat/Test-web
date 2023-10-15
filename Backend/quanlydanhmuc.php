@@ -69,7 +69,7 @@ $query = mysqli_query($conn, $sqlDanhMuc);
         <div class="col-md-5">
             <div class="form_insert">
                 <h4>Form thêm danh mục</h4>
-            <form class="form_insertDanhMuc" action="executeInsertDanhMuc.php" method="post">
+            <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
                 <div class="form-group">
                     <label for="id_danhmuc">ID</label>
                     <input type="text" class="form-control" name="id_danhmuc" value="">
@@ -93,7 +93,7 @@ $query = mysqli_query($conn, $sqlDanhMuc);
         var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
         if (response == true) {
             var id_book = parseInt(id.innerText);
-            var link = "executeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            var link = "exeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
             window.location.href = link;
         }
     }

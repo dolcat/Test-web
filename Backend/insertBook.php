@@ -5,7 +5,7 @@ include_once("header.php");
 <div class="container" style="width: 100%; margin-bottom: 50px;">
     <div class="row">
         <div class="col-md-6">
-            <form action="executeInsertBook.php" method="post">
+            <form action="exeInsertBook.php" method="post">
                 <div class="form-group">
                     <label for="title">Tiêu đề</label>
                     <input type="text" class="form-control" name="title" value="">

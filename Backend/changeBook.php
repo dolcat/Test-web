@@ -15,7 +15,7 @@ $query_book = mysqli_query($conn, $sql);
 <div class="container" style="width: 100%; margin-bottom: 50px;">
     <div class="row">
         <div class="col-md-6">
-            <form action="executeChangeBook.php?id_book=<?php echo $id ?>" method="post">
+            <form action="exeChangeBook.php?id_book=<?php echo $id ?>" method="post">
                 <?php if ($query_book) {
                     $book = mysqli_fetch_array($query_book);
                 ?>

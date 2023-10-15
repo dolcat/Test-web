@@ -98,7 +98,7 @@ $query = mysqli_query($conn, $sql);
         var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
         if(response == true){
             var id_book = parseInt(id.innerText);
-            var link ="executeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            var link ="exeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
             window.location.href = link;
         }
     }
