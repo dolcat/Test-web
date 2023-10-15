@@ -13,7 +13,7 @@ include('header.php');
                 <nav class="category">
                     <h3 class="category_heading" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
                         <i class="category_heading-icon fa-solid fa-list"></i>
-                       
+                       Danh mục
                     </h3>
                     <ul class="category-list">
                         <?php
