@@ -16,7 +16,7 @@
 				<label style="margin-left: -152px;">Mật khẩu</label>
 				<input type="text" name="pass">
 				<label>Số điện thoại</label>
-				<input type="text" name="sdt">	
+				<input type="tel" name="sdt" maxlength="10" style="width: 255px;">	
 				<input id="submit" type="submit" name="submit" value="Gửi">
 			</div>				
 		</div>

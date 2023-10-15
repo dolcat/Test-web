@@ -460,6 +460,13 @@
   gap: 8px;
 }
 
+.btn_insertCart{
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+
 .button_bc_buy {
   background: rgb(255, 66, 78);
   border-radius: 4px;
@@ -489,6 +496,7 @@
 }
 
 .button_bc_cart {
+  width: 100%;
   background: var(--backgroud-color);
   border-radius: 4px;
   border: none;

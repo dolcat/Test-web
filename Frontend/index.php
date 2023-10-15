@@ -13,7 +13,7 @@ include('header.php');
                 <nav class="category">
                     <h3 class="category_heading" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
                         <i class="category_heading-icon fa-solid fa-list"></i>
-                       Danh mục
+                        Danh mục
                     </h3>
                     <ul class="category-list">
                         <?php
@@ -115,6 +115,26 @@ include('header.php');
 <!-- footer -->
 <?php
 include('footer.php');
+if (isset($_GET['check'])) {
+    $check = $_GET['check'];
+    if ($check == "a") {
+?>
+        <script>
+            alert("Thêm vào giỏ hàng thành công!\nMời bạn tiếp tục mua sắm!");
+        </script>
+    <?php
+    } else if ($check == "b") {
+    ?>
+        <script>
+            alert("Thêm vào giỏ hàng thành công!\nMời bạn tiếp tục mua sắm!");
+        </script>
+<?php
+    }
+    unset($_GET['check']);
+} else {
+    echo "ko co";
+}
+
 ?>
 <script>
     function sendValue(value) {
@@ -123,6 +143,10 @@ include('footer.php');
 
     function sendDanhMuc(danhmuc) {
         document.cookie = "danhmuc=" + danhmuc;
+    }
+
+    function incrementBook() {
+        alert("Sản phẩm đã được tăng số lượng trong giỏ hàng!");
     }
 </script>
 

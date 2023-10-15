@@ -21,6 +21,10 @@ $row = mysqli_fetch_array($query);
             grid-template-columns: 55% 45%;
             gap: 4px;
         }
+        .btn_insertCart:hover{
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -188,9 +192,9 @@ $row = mysqli_fetch_array($query);
                                 <button class="button_bc_buy">
                                     <span>Mua ngay</span>
                                 </button>
-                                <button class="button_bc_cart">
+                                <a href="insertToCart.php?id_book=<?php echo $row['id_book']?>" class="btn_insertCart" ><button class="button_bc_cart">
                                     <span>Thêm vào giỏ</span>
-                                </button>
+                                </button></a>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,4 @@
-<!doctype html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="footer.css">
-</head>
-
-<body>
     <footer>
         <div class="container_footer">
             <div class="row">

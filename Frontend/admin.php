@@ -22,6 +22,7 @@ if (isset($_POST['user'])) {
 			$cus = mysqli_fetch_array($query2);
 			$_SESSION['id_customer'] = $cus['id_customer'];
 		}
+
 		header("Location: index.php");
 
 	} else {

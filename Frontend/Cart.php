@@ -19,10 +19,6 @@
 		</div>
 	</div>
 	<div class="container">
-		<?php
-        $query_giohang = "SELECT * FROM cart INNER JOIN book_list sp ON cart.id_book = book_list.id_book WHERE id_user = $id_user";
-        $result_giohang = mysqli_query($conn, $query_giohang);
-                ?>
 		<div class="cart-cotent-row">
 			<div style="margin-left: 30px" class="cart-cotent-left1">
 				<table width="883" border="1">
@@ -92,21 +88,6 @@
 	</div>
 	</section>
 	<!-- footer -->
-    <footer>
-        <div class="footer-item">
-            <div class="img-footer">
-                <img src="img/logo.png" alt="" style="width: 120px;height: 139px;" />
-            </div>
-            <div class="social-footer">
-                <li class="footer_icon"><a target="_blank" href="https://www.facebook.com/thanhlongdev">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a></li>
-                <li><a target="_blank" href="https://github.com/long1211">
-                        <i class="fa-brands fa-github"></i>
-                    </a></li>
-
-            </div>
-        </div>
-    </footer>
+    <?php include("footer.php");?>
 </body>
 </html>
