@@ -1,11 +1,5 @@
 <?php
 include('header.php');
-include('connect.php');
-
-if (!$conn) {
-    die("Connect failed: " . mysqli_connect_error());
-}
-
 ?>
 
 <head>
@@ -19,7 +13,7 @@ if (!$conn) {
                 <nav class="category">
                     <h3 class="category_heading" style="border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
                         <i class="category_heading-icon fa-solid fa-list"></i>
-                        Danh Mục
+                       
                     </h3>
                     <ul class="category-list">
                         <?php

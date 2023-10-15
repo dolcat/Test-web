@@ -11,15 +11,15 @@
 </head>
 <body>
     <div id="wrapper">
-        <form action="admin.php" id="form-login" enctype="multipart/form-data">
+        <form action="admin.php" id="form-login" enctype="multipart/form-data" method="post">
             <h1 class="form-heading">Form đăng nhập</h1>
             <div class="form-group">
                 <i class="far fa-user"></i>
-                <input type="text" class="form-input" name="User"placeholder="Tên đăng nhập">
+                <input type="text" class="form-input" name="user"placeholder="Tên đăng nhập">
             </div>
             <div class="form-group">
                 <i class="fas fa-key"></i>
-                <input type="password" class="form-input" name="Password"placeholder="Mật khẩu">
+                <input type="password" class="form-input" name="pass"placeholder="Mật khẩu">
                 <div id="eye">
                     <i class="far fa-eye"></i>
                 </div>

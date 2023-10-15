@@ -1,3 +1,4 @@
+<?php include_once('connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +50,21 @@
                             <i class="header_navbar-icon fa-solid fa-bell"></i>
                             Thông báo</a>
                     </li>
-                    <li class="header_navbar-item header_navbar-item--strong">
-                        <a href="" class="header_navbar-item-link">Đăng ký</a>
-                    </li>
-                    <li class="header_navbar-item header_navbar-item--strong">
-                        <a href="" class="header_navbar-item-link">Đăng nhập</a>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['user'])) { ?>
+                        <li class="header_navbar-item header_navbar-item--strong">
+                            <div href="" class="header_navbar-item-link"><?php echo $_SESSION['user'] ?></div>
+                        </li>
+                    <?php } else { ?>
+
+                        <li class="header_navbar-item header_navbar-item--strong">
+                            <a href="Dang_ki.php" class="header_navbar-item-link">Đăng ký</a>
+                        </li>
+                        <li class="header_navbar-item header_navbar-item--strong">
+                            <a href="Login.php" class="header_navbar-item-link">Đăng nhập</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
 
 

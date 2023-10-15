@@ -35,6 +35,11 @@
   font-weight: 300;
 }
 
+.header_navbar-item a :hover{
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .header_navbar-item,.header_navbar-item-link,.header_navbar-item-link{
   display: inline-flex;
   align-items: center;
