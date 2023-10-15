@@ -1,4 +1,5 @@
-<?php include("header.php");
+<?php
+	include('header.php');
 ?>
 	<!---------------------- Cart --------------------->
 	<section class = "cart">
@@ -20,10 +21,10 @@
 	<div class="container">
 		<?php
         $query_giohang = "SELECT * FROM cart INNER JOIN book_list sp ON cart.id_book = sp.id_book WHERE id_user = $id_user";
-        $result_giohang = mysqli_query($con, $query_giohang);
+        $result_giohang = mysqli_query($conn, $query_giohang);
                 ?>
 		<div class="cart-cotent-row">
-			<div style="margin-left: 30px" class="cart-cotent-left ">
+			<div style="margin-left: 30px" class="cart-cotent-left1">
 				<table width="883" border="1">
 				  <tbody>
 					<tr>
@@ -51,7 +52,7 @@
       	<td><?php ?></td>
       	<td><?php echo $title ?></td>
 		<td><?php echo $price ?></td>
-		<td><a href="Cart_del.php?ID_book=<?php echo $ID_book[$i]?>">Xóa</a></td>
+		<td><a href="Cart_del.php?ID_book=<?php echo $id_book[$i]?>">Xóa</a></td>
     </tr>
 	  <?php
 	  }
@@ -87,8 +88,7 @@
 					<a href="Pay.php"><button>THANH TOÁN</button></a>
 				</div>
 			</div>
-		</div>	
-			
+		</div>		
 	</div>
 	</section>
 	<!-- footer -->
