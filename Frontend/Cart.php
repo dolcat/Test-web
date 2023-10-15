@@ -20,7 +20,7 @@
 	</div>
 	<div class="container">
 		<?php
-        $query_giohang = "SELECT * FROM cart INNER JOIN book_list sp ON cart.id_book = sp.id_book WHERE id_user = $id_user";
+        $query_giohang = "SELECT * FROM cart INNER JOIN book_list sp ON cart.id_book = book_list.id_book WHERE id_user = $id_user";
         $result_giohang = mysqli_query($conn, $query_giohang);
                 ?>
 		<div class="cart-cotent-row">
