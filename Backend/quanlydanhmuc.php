@@ -55,7 +55,7 @@ $query = mysqli_query($conn, $sqlDanhMuc);
                                     <td class="col-md-1"><?php echo $row['id_danhmuc'] ?></td>
                                     <td class="col-md-2"><?php echo $row['ten_danhmuc'] ?></td>
                                     <td class="col-md-2">
-                                        <a href="changeBook.php?id_book=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
+                                        <a href="changeDanhMuc.php?id_danhmuc=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
                                         <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
 
                                     </td>

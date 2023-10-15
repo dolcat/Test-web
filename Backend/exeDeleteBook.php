@@ -9,7 +9,6 @@ if(isset($_GET['id_book'])){
     if($check == true){
         mysqli_close($conn);
         header("location: index.php");
-
     }
 }
 else{
