@@ -440,91 +440,67 @@ width: 50%;
 }
 
 /* footer */
-#footer {
-  position: sticky;
-  color: #fff;
-  margin-top: 30px;
-  height: 400px;
-  background-color: #474646;
-  margin-bottom: 0;
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
-.lienhe .lh1{
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.row {
   display: flex;
-  margin: 20px 100px;
-  /* align-items: center; */
   justify-content: space-between;
-  
-}
-.lienhe li a:hover{
-  color: aquamarine;
-}
-.lienhe .lh1 > li{
-  margin-top: 30px;
-}
-.lienhe .lh1 a,p{
-  color: #fff;
-  margin-top: 10px;
-}
-.lienhe .lh1 .lh2 li{
-  margin-top: 10px;
-}
-#footer .mail{
-  margin-top: 10px;
-}
-#footer .mail input{
-  border: 1px solid #fff;
-  width: 200px;
-  height: 30px;
-}
-#footer .mail button{
-  border: 1px solid #fff;
-  width: 50px;
-  height: 30px;
-}
-#footer .diachi{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 100px;
-  border-top: 1px solid #fff;
-}
-#footer .diachi-mid {
-  border-left: 1px solid #fff;
-  margin-top: 50px;
-  margin-right: 200px;
-}
-#footer .diachi-mid i{
-  padding: 10px;
-  color: #fff;
-}
-#footer .diachi-mid .mid-comtent{
-  display: flex;
-}
-#footer .diachi-left{
-  margin: 50px;
-
-}
-.diachi-right{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-.diachi-right .icon{
-  border: 1px solid #fff;
-  border-radius: 50%;
-  margin: 10px;
-  width: 30px;
-  height: 30px;
-  padding-top: 5px;
-  
-}
-.diachi-right .icon i{
-  color: #fff;
-  padding-left:  5px;
-  
-}
-.diachi-right .icon i:hover{
-  color: aqua;
+  margin-bottom: 20px;
 }
 
+.col-md-4 {
+  width: 33.33%;
+}
+
+.h4 {
+  margin-bottom: 10px;
+}
+
+.p {
+  margin-bottom: 20px;
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links li a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.copyright {
+  text-align: center;
+}
