@@ -11,6 +11,7 @@ if (isset($_POST['user'])) {
 		$tk = mysqli_fetch_array($query);
 		$_SESSION['user'] = $tk['user'];
 		$_SESSION['pass'] = $tk['pass'];
+		$_SESSION['id_tk'] = $tk['id_tk'];
 		header("Location: index.php");
 
 	} else {
