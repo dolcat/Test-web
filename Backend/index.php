@@ -15,10 +15,10 @@ $query = mysqli_query($conn, $sql);
             <div class="tool_bar">
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="#" style="color: blue;">Quản lý sản phẩm</a>
+                        <a href="index.php" style="color: blue;">Quản lý sản phẩm</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Quản lý danh mục</a>
+                        <a href="quanlydanhmuc.php">Quản lý danh mục</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="#">Quản lý đơn hàng</a>

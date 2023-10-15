@@ -18,8 +18,11 @@ include("connect.php");
             <a class="col-md-2" href="index.php">
                 <img src="https://png.pngtree.com/template/20191011/ourmid/pngtree-e-book-logo-design---modern-technology-image_317099.jpg" class="img-fluid">
             </a>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <h1 class="display-4 heading" style="color: white;">ADMIN BOOK STORE</h1>
+            </div>
+            <div class="col-md-2">
+                <a href="../Frontend/index.php" class="header_navbar-item-link">Đăng xuất</a>
             </div>
         </div>
     </header>

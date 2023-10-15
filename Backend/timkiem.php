@@ -20,10 +20,10 @@ $query = mysqli_query($conn, $sql);
             <div class="tool_bar">
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="#" style="color: blue;">Quản lý sản phẩm</a>
+                        <a href="index.php" style="color: blue;">Quản lý sản phẩm</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Quản lý danh mục</a>
+                        <a href="quanlydanhmuc.php">Quản lý danh mục</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="#">Quản lý đơn hàng</a>
@@ -35,9 +35,8 @@ $query = mysqli_query($conn, $sql);
                         <a href="#"><button class="btn_seaching">Thêm sản phẩm</button></a>
                     </li>
                 </ul>
-
                 <div class="form_searching">
-                    <form class="form-inline" action="index.php" method="get">
+                    <form class="form-inline" action="timkiem.php" method="get">
                         <input type="text" class="form-control me-2 d-inline-block" placeholder="Tìm kiếm..." name="txt_searching">
                         <button type="submit" class="btn_seaching">Tìm kiếm</button>
                     </form>

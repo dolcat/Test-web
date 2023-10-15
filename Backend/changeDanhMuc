@@ -2,6 +2,13 @@
 include("header.php");
 $sqlDanhMuc = "SELECT * FROM danh_muc";
 $query = mysqli_query($conn, $sqlDanhMuc);
+$id = "";
+if(isset($_GET['id_danhmuc'])){
+    $id = $_GET['id_danhmuc'];
+}
+$queryChangeDm = mysqli_query($conn, "SELECT * FROM danh_muc WHERE id_danhmuc = '$id'");
+$danhmuc = mysqli_fetch_array($queryChangeDm);
+
 ?>
 
 <head>
@@ -55,7 +62,7 @@ $query = mysqli_query($conn, $sqlDanhMuc);
                                     <td class="col-md-1"><?php echo $row['id_danhmuc'] ?></td>
                                     <td class="col-md-2"><?php echo $row['ten_danhmuc'] ?></td>
                                     <td class="col-md-2">
-                                        <a href="changeBook.php?id_book=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
+                                        <a href="changeDanhMuc.php?id_danhmuc=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
                                         <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
 
                                     </td>
@@ -72,14 +79,14 @@ $query = mysqli_query($conn, $sqlDanhMuc);
             <form class="form_insertDanhMuc" action="executeInsertDanhMuc.php" method="post">
                 <div class="form-group">
                     <label for="id_danhmuc">ID</label>
-                    <input type="text" class="form-control" name="id_danhmuc" value="">
+                    <input type="text" class="form-control" name="id_danhmuc" value="<?php echo $danhmuc['id_danhmuc']?>">
                 </div>
                 <div class="form-group">
                     <label for="ten_danhmuc">Danh mục</label>
-                    <input type="text" class="form-control" name="ten_danhmuc" value="">
+                    <input type="text" class="form-control" name="ten_danhmuc" value="<?php echo $danhmuc['ten_danhmuc']?>">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Thêm danh mục</button>
+                    <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Lưu thay đổi</button>
                 </div>
             </form>
             </div>

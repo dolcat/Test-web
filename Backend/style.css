@@ -153,3 +153,41 @@ a:hover {
 
 }
 
+.header_navbar-item-link{
+  display: inline-block;
+  font-size:1.6rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.header_navbar-item-link a :hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.box_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.col-md-6 {
+  margin: 10px 16px;
+}
+.form_insert{
+  
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #DFDFDF;
+}
+
+.form_insertDanhMuc{
+  margin: 0px 10px 10px 10px;
+}
+
+.form-group label{
+  padding: 5px 0;
+}
+
+

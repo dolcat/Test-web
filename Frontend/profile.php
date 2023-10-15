@@ -15,6 +15,7 @@ if (isset($_SESSION['id_user'])) {
         $phone = $profile['phone'];
         $address = $profile['address'];
         $email = $profile['email'];
+        
     } 
 }
 else {
@@ -53,7 +54,7 @@ else {
                         <div class="info_left">
                             <span class="info_title">Thông tin cá nhân</span>
                             <div class="detail_info">
-                                <form action="">
+                                <form action="updateProfile.php" method="post">
                                     <div class="fomr_info">
                                         <div class="form_avatar">
                                             <div class="avatar_detail">
@@ -66,13 +67,13 @@ else {
                                             <div class="form-control">
                                                 <div class="label_name">Họ & Tên</div>
                                                 <div class="input_info name">
-                                                    <input type="search" class="input" name="fullName" maxlength="128" placeholder="Thêm họ tên" value="<?php echo $name ?>">
+                                                    <input type="search" class="input" name="name" maxlength="128" placeholder="Thêm họ tên" value="<?php echo $name ?>">
                                                 </div>
                                             </div>
                                             <div class="form-control">
-                                                <div class="label_name">Nick name</div>
+                                                <div class="label_name">User name</div>
                                                 <div class="input_info nickname">
-                                                    <input type="search" class="input" name="nickName" maxlength="128" placeholder="Thêm biệt danh" value="<?php echo $user ?>">
+                                                    <input type="search" class="input" name="user" maxlength="128" placeholder="Thêm tên đăng nhập" value="<?php echo $user ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -80,15 +81,15 @@ else {
                                     <div class="form-control">
                                         <div class="label_name" style="margin-bottom: 8px;">Giới tính</div>
                                         <label for="" class="radio_option">
-                                            <input type="radio" name="gender" value="male">
+                                            <input type="radio" name="gender" value="Nam">
                                             <span class="label">Nam</span>
                                         </label>
                                         <label for="" class="radio_option">
-                                            <input type="radio" name="gender" value="Female">
+                                            <input type="radio" name="gender" value="Nũ">
                                             <span class="label">Nữ</span>
                                         </label>
                                         <label for="" class="radio_option">
-                                            <input type="radio" name="gender" value="Diff">
+                                            <input type="radio" name="gender" value="Khác">
                                             <span class="label">Khác</span>
                                         </label>
                                     </div>
@@ -101,7 +102,7 @@ else {
                                     <div class="form-control">
                                         <div class="label_name">Số điện thoại</div>
                                         <div class="input_info name">
-                                            <input type="tel" class="input" name="email" maxlength="10" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
+                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="0<?php echo $phone ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">

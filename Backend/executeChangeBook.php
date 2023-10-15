@@ -17,17 +17,20 @@ if (isset($_POST['title']) && isset($_REQUEST['id_book'])){
     $txt_price = $_POST['price'];
     $txt_size = $_POST['size'];
 
-    $sql_insert = "UPDATE `book_list` SET `bookstore`='$txt_bookstore',`title`='$txt_title',`id_danhmuc`='$txt_danhmuc',
+    $sql_update = "UPDATE `book_list` SET `bookstore`='$txt_bookstore',`title`='$txt_title',`id_danhmuc`='$txt_danhmuc',
     `author`='$txt_author',`translator`='$txt_translator',`publisher`='$txt_publisher',`size`='$txt_size',`cover_type`='$txt_coverType',
     `number`='$txt_numberOfPages',`publication_of_date`='$txt_publicationDate',`description`='$txt_description',`img`='$txt_img',`price`='$txt_price'
      WHERE `id_book` = '$txt_idbook'";
 
-    $check = mysqli_query($conn, $sql_insert);
+    $check = mysqli_query($conn, $sql_update);
     
     if($check){
         mysqli_close($conn);
         header("Location:index.php");
         
+    }
+    else{
+        echo "Cant update";
     }
 
 } else {
