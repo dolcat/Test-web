@@ -1,5 +1,5 @@
 <?php
-	$conn = new mysqli('localhost','root','','qlsach') or die ("Không kết nối được với máy chủ");
+	include('connect.php');
 	$User=$_POST['user'];
     $Password=$_POST['pass'];
     $Phone=$_POST['sdt'];
@@ -17,7 +17,7 @@
 			$result=mysqli_query($conn,$sql3);
 			$row=mysqli_fetch_object($result);
 			$ID_TK=$row->ID_TK;
-			$query  = "INSERT INTO `customer` (`ID_TK`, `Phone`) VALUE('$ID_TK','$Phone')";
+			$query  = "INSERT INTO `customer` (`id_user`, `phone`) VALUE('$ID_TK','$Phone')";
 			$result2 = mysqli_query($conn, $query) or die("Thêm số điện thoại thất bại");
         	header('location: Login.php');
 		}

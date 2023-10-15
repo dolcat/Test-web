@@ -1,7 +1,7 @@
 <?php 
 session_start();
 const host = 'localhost';
-const database = 'banhang';
+const database = 'qlsach';
 const user = 'root';
 const password = '';
 

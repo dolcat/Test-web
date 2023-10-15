@@ -1,6 +1,5 @@
 <?php
 include_once('header.php');
-include('connect.php');
 if (!$conn) {
     die("Connect failed: " . mysqli_connect_error());
 }
@@ -12,19 +11,6 @@ if (isset($_COOKIE['value'])) {
 
 $sql = "SELECT * FROM `book_list` WHERE id_book = '" . $key . "';";
 $query = mysqli_query($conn, $sql);
-// $stt_hang = 0;  
-// while ($row = mysqli_fetch_object($query)) {
-//     $id_bookstore[$stt_hang] = $row->id_bookstore;
-//     $title[$stt_hang] = $row->title;
-//     $author[$stt_hang] = $row->author;
-//     $translator[$stt_hang] = $row->translator;
-//     $publisher[$stt_hang] = $row->publisher;
-//     $size[$stt_hang] = $row->size;
-//     $cover_type[$stt_hang] = $row->cover_type;
-//     $country[$stt_hang] = $row->country;
-//     $image[$stt_hang] = $row->image;
-//     $country[$stt_hang] = $row->country;
-// }
 $row = mysqli_fetch_array($query);
 ?>
 
@@ -193,7 +179,7 @@ $row = mysqli_fetch_array($query);
                                 <div class="temp_count_number">
                                     <?php $price = $row['price'];
                                     ?>
-                                    <div><span class = "price_text"><?php echo $price ?></span>
+                                    <div><span class="price_text"><?php echo $price ?></span>
                                         <sub class="đ">đ</sub>
                                     </div>
                                 </div>

@@ -1,4 +1,9 @@
-<?php include_once('connect.php'); ?>
+<?php include_once('connect.php');
+$id_user = "";
+if(isset($_SESSION['id_user'])){
+$id_user =$_SESSION['id_user'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +59,9 @@
                     if (isset($_SESSION['user'])) { ?>
                         <li class="header_navbar-item header_navbar-item--strong">
                             <div href="" class="header_navbar-item-link"><?php echo $_SESSION['user'] ?></div>
+                        </li>
+                        <li class="header_navbar-item header_navbar-item--strong">
+                            <a href="logout.php" class="header_navbar-item-link">Đăng xuất</a>
                         </li>
                     <?php } else { ?>
 

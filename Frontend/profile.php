@@ -1,5 +1,32 @@
 <?php
 include("header.php");
+$user = "";
+$name = "";
+$phone = "";
+$address = "";
+$email = "";
+if (isset($_SESSION['id_user'])) {
+    $sql_profile = "SELECT * FROM customer,account WHERE customer.id_user = '$id_user' AND customer.id_user = account.id_user";
+    $check = mysqli_query($conn, $sql_profile);
+    if ($check == true) {
+        $profile = mysqli_fetch_array($check);
+        $name = $profile['name'];
+        $user = $profile['user'];
+        $phone = $profile['phone'];
+        $address = $profile['address'];
+        $email = $profile['email'];
+    } 
+}
+else {
+    $name = "Nhập họ tên";
+    $user = "Vui lòng đăng nhập!";
+    $phone = "Nhập số điện thoại";
+    $address = "Nhập địa chỉ";
+    $email = "Nhập email";
+}
+
+
+
 ?>
 <div class="profile_content">
     <div class="grid">
@@ -10,7 +37,7 @@ include("header.php");
                         <div class="img_default" style="background-image: url(https://icons.iconarchive.com/icons/papirus-team/papirus-status/512/avatar-default-icon.png)"></div>
                         <div class="account_info_name">
                             Tài khoản của
-                            <strong>Nguyễn Văn Sơn</strong>
+                            <strong><?php echo $name ?></strong>
                         </div>
                     </div>
                     <ul class="category_profile">
@@ -39,13 +66,13 @@ include("header.php");
                                             <div class="form-control">
                                                 <div class="label_name">Họ & Tên</div>
                                                 <div class="input_info name">
-                                                    <input type="search" class="input" name="fullName" maxlength="128" placeholder="Thêm họ tên" value="Nguyễn Văn Sơn">
+                                                    <input type="search" class="input" name="fullName" maxlength="128" placeholder="Thêm họ tên" value="<?php echo $name ?>">
                                                 </div>
                                             </div>
                                             <div class="form-control">
                                                 <div class="label_name">Nick name</div>
                                                 <div class="input_info nickname">
-                                                    <input type="search" class="input" name="nickName" maxlength="128" placeholder="Thêm biệt danh" value="Dolcats">
+                                                    <input type="search" class="input" name="nickName" maxlength="128" placeholder="Thêm biệt danh" value="<?php echo $user ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -68,13 +95,19 @@ include("header.php");
                                     <div class="form-control">
                                         <div class="label_name">Địa chỉ</div>
                                         <div class="input_info name">
-                                            <input type="search" class="input" name="address" maxlength="128" placeholder="Nhập địa chỉ nhận hàng" value="Nghi Diên, Nghi Lộc, Nghệ An">
+                                            <input type="search" class="input" name="address" maxlength="128" placeholder="Nhập địa chỉ nhận hàng" value="<?php echo $address ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="label_name">Số điện thoại</div>
+                                        <div class="input_info name">
+                                            <input type="tel" class="input" name="email" maxlength="10" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">
                                         <div class="label_name">Email</div>
                                         <div class="input_info name">
-                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="nguyenvanson@gmail.com">
+                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="<?php echo $email ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">
