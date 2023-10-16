@@ -10,7 +10,7 @@
 
 /*---------------------- Cart ---------------------*/
 .cart {
-	margin: 10px 0px 30px;
+	padding: 10px 0px 30px;
 	background-color: #F5F5FA;
 	position: relative;
 }
@@ -23,7 +23,7 @@
 }
 
 .label_heading_cart {
-	margin-left: 20px;
+	margin:  0px  0px 10px 20px;
 	display: flex;
 	-webkit-box-align: center;
 	align-items: center;
@@ -271,12 +271,9 @@
 
 
 /*---------------------- Payment ---------------------*/
-.payment {
-	padding: 100px 0;
-}
-
 .payment-content-row {
 	display: flex;
+	width: 100%;
 }
 
 .payment-top-wrap {
@@ -293,6 +290,11 @@
 	justify-content: space-between;
 	align-items: center;
 	margin: 50px 0 100px;
+}
+
+.information_payment{
+	display: flex;
+	flex-direction: column;
 }
 
 .payment-top-item {
@@ -319,71 +321,84 @@
 }
 
 .payment-content-left {
-
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
 	width: 60%;
 }
 
 .payment-content-right {
+	
 	width: 40%;
 	border-left: 2px solid #ddd;
 	padding-left: 12px;
 }
 
+.payment-content-left-method-delivery{
+	border-radius: 8px;
+	margin: 10px 16px 0 0;
+	background-color: white;
+	padding: 10px 0px 10px 16px;
+}
+.payment-content-left p{
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.payment-content-left-method-delivery-item{
+	display: flex;
+	text-align: center;
+	-webkit-box-align: center;
+}
+
+.payment-content-left label{
+	font-size: 17px;
+	font-weight: 300;
+	padding-left: 5px;
+}
+
+
 .payment-content-left p,
 label {
 	margin-top: 10px;
-	font-size: 17px;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+
 }
 
-.payment-content-right button {
+.form_infor_user_payment{
 	display: flex;
 	flex-direction: column;
-	padding: 12px 0;
-	border-bottom: 1px dashed #dddddd;
-
+	background-color: white;
+	border-radius: 8px;
+	border: 1px solid #DFDFDF;
 }
-
-.payment-content-right-button {
+.form-group_infor{
 	display: flex;
-	padding: 0px 0px 10px 0;
+	flex-direction: column;
 }
 
-.payment-content-right-button input {
-	flex: 2;
-	height: 30px;
-	width: auto;
-	margin-right: 100px;
-	padding-left: 12px;
+.form-group_infor input{
+	border: 1px solid #E1E1E6;
+	border-radius: 4px;
 }
 
-.payment-content-right-button button {
-	flex: 1;
+.form-group_infor input, label{
+	margin: 10px;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 150%;
+}
+
+.form-group_infor_button{
+	display: flex;
+	flex-direction: row;
+}
+
+.form-group_infor_button button{
+	width: 50%;
+	margin: 10px 5px 10px 10px;
+	background-color: rgb(11, 116, 219);
+	border-radius: 5px;
 	height: 30px;
-	width: 100px;
-	background-color: black;
 	color: white;
 	border: none;
-	cursor: pointer;
-}
-
-.payment-content-right-payment {
-	margin-top: 50px;
-	align-items: center;
-	text-align: center;
-}
-
-.payment-content-right-payment button {
-	height: 35px;
-	padding: 0 20px;
-	font-size: 12px;
-	color: black;
-	cursor: pointer;
-	transition: all 0, 3s ease;
-	border: 2px solid black;
-}
-
-.payment-content-right-payment button:hover {
-	background-color: black;
-	color: #fff;
 }

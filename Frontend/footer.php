@@ -2,7 +2,7 @@
     <footer>
         <div class="container_footer">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin: 10px 0 0 0;">
                     <h4>Giới thiệu</h4>
                     <p>
                         Website cửa hàng sách của chúng tôi là một nơi tuyệt vời để tìm kiếm những cuốn sách mới và cũ, từ các tác phẩm kinh điển đến các tiểu thuyết mới nhất.
@@ -13,7 +13,7 @@
                          hoặc đơn giản là trò chuyện với bạn bè của mình về những cuốn sách yêu thích của bạn trên website của chúng tôi.
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin: 10px 0 0 0;">
                     <h4>Liên hệ</h4>
                     <ul>
                         <li>

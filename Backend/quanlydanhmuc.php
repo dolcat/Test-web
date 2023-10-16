@@ -7,9 +7,9 @@ $query = mysqli_query($conn, $sqlDanhMuc);
 <head>
     <title>Quản lý danh mục</title>
     <style>
-        h4{
+        h4 {
             margin: 10px 0px 10px 10px;
-            
+
         }
     </style>
 </head>
@@ -49,12 +49,11 @@ $query = mysqli_query($conn, $sqlDanhMuc);
                         <tbody>
                             <?php while ($row = mysqli_fetch_array($query)) { ?>
                                 <tr>
-                                    <td class="col-md-1"><?php echo $row['id_danhmuc'] ?></td>
+                                    <td class="col-md-1 id_danhmuc<?php echo $row['id_danhmuc'] ?>"><?php echo $row['id_danhmuc'] ?></td>
                                     <td class="col-md-2"><?php echo $row['ten_danhmuc'] ?></td>
                                     <td class="col-md-2">
                                         <a href="changeDanhMuc.php?id_danhmuc=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
-                                        <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
-
+                                        <a href="exeDeleteDm.php?id_danhmuc=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -66,31 +65,28 @@ $query = mysqli_query($conn, $sqlDanhMuc);
         <div class="col-md-5">
             <div class="form_insert">
                 <h4>Form thêm danh mục</h4>
-            <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
-                <div class="form-group">
-                    <label for="id_danhmuc">ID</label>
-                    <input type="text" class="form-control" name="id_danhmuc" value="">
-                </div>
-                <div class="form-group">
-                    <label for="ten_danhmuc">Danh mục</label>
-                    <input type="text" class="form-control" name="ten_danhmuc" value="">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Thêm danh mục</button>
-                </div>
-            </form>
+                <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
+                    <div class="form-group">
+                        <label for="id_danhmuc">ID</label>
+                        <input type="text" class="form-control" name="id_danhmuc" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="ten_danhmuc">Danh mục</label>
+                        <input type="text" class="form-control" name="ten_danhmuc" value="">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Thêm danh mục</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 <script>
-    var id = document.querySelector(".id_book");
-
     function btn_delete() {
         var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
         if (response == true) {
-            var id_book = parseInt(id.innerText);
-            var link = "exeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            var link = "exeDeleteDm.php";
             window.location.href = link;
         }
     }

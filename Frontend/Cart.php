@@ -81,7 +81,7 @@ $tong_tien = 0;
 											<td style="text-align:end; padding: 5px; font-size: 20px;">
 												<?php echo ($cart['price'] * $cart['number_cart']) ?>
 											</td>
-											<td style="text-align:center;"><a href="Cart_del.php?ID_book=<?php echo $id_book[$i] ?>">Xóa</a></td>
+											<td style="text-align:center;"><a href="../Backend/Cart_del.php?id_book=<?php echo $cart['id_book'] ?>">Xóa</a></td>
 										</tr>
 								<?php
 										$tong_tien += $cart['price'];
@@ -119,8 +119,8 @@ $tong_tien = 0;
 							<?php } ?>
 						</div>
 						<div class="cart-content-right-button" style="padding-bottom: 10px;">
-							<a href="fanpages.php"><button>TIẾP TỤC MUA SẮM</button></a>
-							<a href="Pay.php"><button>THANH TOÁN</button></a>
+							<a href="index.php"><button>TIẾP TỤC MUA SẮM</button></a>
+							<a href="completePay.php"><button>THANH TOÁN</button></a>
 						</div>
 					</div>
 				</div>
