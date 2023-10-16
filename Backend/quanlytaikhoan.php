@@ -2,14 +2,12 @@
 include("header.php");
 $sqlTaiKhoan = "SELECT * FROM account";
 $query = mysqli_query($conn, $sqlTaiKhoan);
-?>
-
-<head>
+?><head>
     <title>Quản lý tài khoản</title>
     <style>
-        h4 {
+        h4{
             margin: 10px 0px 10px 10px;
-
+            
         }
     </style>
 </head>
@@ -31,6 +29,9 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
                 <li class="list-inline-item">
                     <a href="quanlytaikhoan.php" style="color: blue;">Quản lý tài khoản</a>
                 </li>
+                <li class="list-inline-item">
+                    <a href="insertBook.php"><button class="btn_seaching">Thêm sản phẩm</button></a>
+                </li>
             </ul>
         </div>
         <div class="col-md-7">
@@ -44,7 +45,7 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
                             <tr>
                                 <th class="col-md-1">ID</th>
                                 <th class="col-md-2">Tài khoản</th>
-                                <th class="col-md-1">Mật khẩu</th>
+                                <th class="col-md-1">Password</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,14 +53,11 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
                                 <tr>
                                     <td class="col-md-1"><?php echo $row['id_user'] ?></td>
                                     <td class="col-md-2"><?php echo $row['user'] ?></td>
-                                    <td class="col-md-2"><?php echo $row['password'] ?></td>
+									<td class="col-md-2"><?php echo $row['password'] ?></td>
                                     <td class="col-md-2">
-                                        <a href="changeTaiKhoan.php?id_user=<?php echo $row['id_user'] ?>">
-                                            <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button>
-                                        </a>
-                                        <a href="exeDeleteTaiKhoan.php?id_user=<?php echo $row['id_user'] ?>">
-                                            <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
-                                        </a>
+										<a href="changeTaiKhoan.php?id_user=<?php echo $row['id_user'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
+                                        <a href="exeDeleteTaiKhoan.php?id_user=<?php echo $row['id_user'] ?>"> <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button></a>
+
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -71,27 +69,29 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
         <div class="col-md-5">
             <div class="form_insert">
                 <h4>Form thêm tài khoản</h4>
-                <form class="form_insert" action="exeInsertTaiKhoan.php" method="post">
-                    <div class="form-group">
-                        <label for="user">Tên đăng nhập</label>
-                        <input type="text" class="form-control" name="user" value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Mật khẩu</label>
-                        <input type="text" class="form-control" name="password" value="">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Thêm tài khoản</button>
-                    </div>
-                </form>
+            <form class="form_insertTaiKhoan" action="exeInsertTaiKhoan.php" method="post">
+                <div class="form-group">
+                    <label for="user">user</label>
+                    <input type="text" class="form-control" name="user" value="">
+                </div>
+                <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="text" class="form-control" name="password" value="">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn_seaching" style="margin: 10px 0px;">Thêm tài khoản</button>
+                </div>
+            </form>
             </div>
         </div>
     </div>
 </div>
 <script>
+    var id_user = document.querySelector(".id_user");
     function btn_delete() {
         var response = confirm("Bạn có chắc chắn xóa tài khoản này không?");
         if (response == true) {
+            var id_user = parseInt(id_user.innerText);
             var link = "exeDeleteTaiKhoan.php";
             window.location.href = link;
         }
