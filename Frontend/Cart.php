@@ -5,7 +5,7 @@ if (isset($_SESSION['id_customer'])) {
 	$sql = "SELECT DISTINCT * FROM `book_list`,cart WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;";
 	$query = mysqli_query($conn, $sql);
 }
-$i = 0;
+$i = 1;
 $tong_tien = 0;
 ?>
 
@@ -102,7 +102,7 @@ $tong_tien = 0;
 							</tr>
 							<tr>
 								<td style="font-size: 17px; font-weight: 400;">Tổng sản phẩm</td>
-								<td style="padding-right: 5px; font-size: 17px;"><?php echo $i ?></td>
+								<td style="padding-right: 5px; font-size: 17px;"><?php echo $i -1 ?></td>
 							</tr>
 							<tr>
 								<td>Tổng tiền hàng</td>
