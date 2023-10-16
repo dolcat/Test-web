@@ -14,13 +14,13 @@ include("header.php");
                         <div class="state_line" style="width:98%;">
                             <div class="cart-top-wrap">
                                 <div class="cart-top">
-                                    <div class="cart-top-cart cart-top-item">
+                                    <div class="payment-top-cart payment-top-item">
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
-                                    <div class="cart-top-address cart-top-item">
-                                        <i class="fas fa-map-marked-alt"></i>
+                                    <div class="payment-top-address payment-top-item" style="border: 1px solid #0DB7EA;">
+                                        <i class="fas fa-map-marked-alt" style="color: #0DB7EA;"></i>
                                     </div>
-                                    <div class="cart-top-payment cart-top-item">
+                                    <div class="payment-top-payment payment-top-item">
                                         <i class="fas fa-money-check-alt"></i>
                                     </div>
                                 </div>
