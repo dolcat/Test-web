@@ -25,10 +25,10 @@ $query = mysqli_query($conn, $sqlDanhMuc);
                     <a href="#" style="color: blue;">Quản lý danh mục</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#">Quản lý đơn hàng</a>
+                    <a href="quanlydonhang.php">Quản lý đơn hàng</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#">Quản lý tài khoản</a>
+                    <a href="quanlytaikhoan.php">Quản lý tài khoản</a>
                 </li>
             </ul>
         </div>
@@ -65,7 +65,7 @@ $query = mysqli_query($conn, $sqlDanhMuc);
         <div class="col-md-5">
             <div class="form_insert">
                 <h4>Form thêm danh mục</h4>
-                <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
+                <form class="form_insert" action="exeInsertDanhMuc.php" method="post">
                     <div class="form-group">
                         <label for="id_danhmuc">ID</label>
                         <input type="text" class="form-control" name="id_danhmuc" value="">
@@ -83,7 +83,6 @@ $query = mysqli_query($conn, $sqlDanhMuc);
     </div>
 </div>
 <script>
-
     function btn_delete() {
         var response = confirm("Bạn có chắc chắn xóa danh mục này không?");
         if (response == true) {

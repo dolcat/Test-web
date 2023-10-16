@@ -8,6 +8,9 @@ if(isset($_GET['id_user'])){
         mysqli_close($conn);
         header("location: quanlytaikhoan.php");
     }
+    else{
+        echo "cant execute";
+    }
 }
 else{
     echo "Khong co";

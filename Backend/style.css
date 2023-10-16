@@ -176,13 +176,12 @@ a:hover {
   margin: 10px 16px;
 }
 .form_insert{
-  
+  padding: 10px;
   background-color: white;
   border-radius: 8px;
-  border: 1px solid #DFDFDF;
 }
 
-.form_insertDanhMuc{
+.form_insert{
   margin: 0px 10px 10px 10px;
 }
 
@@ -190,6 +189,11 @@ a:hover {
   padding: 5px 0;
 }
 
+.formBook{
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
 
 
 

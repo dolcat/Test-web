@@ -15,7 +15,25 @@ $query_book = mysqli_query($conn, $sql);
 <div class="container" style="width: 100%; margin-bottom: 50px;">
     <div class="row">
         <div class="col-md-6">
-            <form action="exeChangeBook.php?id_book=<?php echo $id ?>" method="post">
+            <div class="tool_bar">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="index.php" style="color: blue;">Quản lý sản phẩm</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="quanlydanhmuc.php">Quản lý danh mục</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="quanlydonhang.php">Quản lý đơn hàng</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="quanlytaikhoan.php">Quản lý tài khoản</a>
+                    </li>
+
+                </ul>
+            </div>
+            <h4>Form sửa thông tin sách</h4>
+            <form action="exeChangeBook.php?id_book=<?php echo $id ?>" method="post" class="formBook">
                 <?php if ($query_book) {
                     $book = mysqli_fetch_array($query_book);
                 ?>

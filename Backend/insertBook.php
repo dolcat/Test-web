@@ -4,8 +4,26 @@ include_once("header.php");
 
 <div class="container" style="width: 100%; margin-bottom: 50px;">
     <div class="row">
+        <div class="tool_bar">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="index.php">Quản lý sản phẩm</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="quanlydanhmuc.php" style="color: blue;">Quản lý danh mục</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="quanlydonhang.php">Quản lý đơn hàng</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="quanlytaikhoan.php">Quản lý tài khoản</a>
+                </li>
+
+            </ul>
+        </div>
         <div class="col-md-6">
-            <form action="exeInsertBook.php" method="post">
+        <h4>Form thêm sản phẩm sách</h4>
+            <form action="exeInsertBook.php" method="post" class="formBook">
                 <div class="form-group">
                     <label for="title">Tiêu đề</label>
                     <input type="text" class="form-control" name="title" value="">
