@@ -402,3 +402,67 @@ label {
 	color: white;
 	border: none;
 }
+
+
+.form_searching{
+	width: 100%;
+	height: 40px;
+	display: flex;
+	background-color: white;
+	margin: 10px 0px 20px;
+}
+
+.form_searching form{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	-webkit-box-align: center;
+}
+
+.order_searching_item{
+	width: 100%;
+}
+
+.order_searching_item input{
+	width: 90%;
+	padding: 10px;
+}
+
+.order_searching_item button{
+	margin-right: 0;
+	border: 0px;
+	height: 40px;
+	border-radius: 4px;
+	color: white;
+	font-size: 1rem;
+	background-color: rgb(11, 116, 229);
+	cursor: pointer;
+	padding: 10px;
+}
+
+.infor_detail_order{
+	background-color: white;
+	border-radius: 4px;
+	font-size: 13px;
+	margin-bottom: 20px;
+	padding: 16px;
+}
+
+.detail_info_order{
+	display: flex;
+	flex-direction: column;
+}
+
+.order_detail_column{
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	-webkit-box-align: center;
+}
+
+.info_title_order{
+	padding:0px 0px 10px 10px;
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 20px;
+}

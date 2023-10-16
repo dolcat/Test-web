@@ -460,7 +460,7 @@
   gap: 8px;
 }
 
-.btn_insertCart{
+.btn_insertCart {
   text-decoration: none;
   cursor: pointer;
   width: 100%;
@@ -542,8 +542,10 @@
 }
 
 .info-container {
+  width: 100%;
+  flex-wrap: wrap;
   display: flex;
-  flex-direction: row;
+  margin: 0px auto 20px;
 }
 
 .left_column {
@@ -761,20 +763,20 @@
 }
 
 .form-control label input[type="radio"] {
-  margin: 0 5px 0 0; 
+  margin: 0 5px 0 0;
 }
 
-.label{
+.label {
   font-size: 1rem;
 }
 
-.btn_submit{
+.btn_submit {
   border: 0px;
   height: 40px;
   border-radius: 4px;
   color: white;
   font-size: 1rem;
-  background-color: rgb(11,116,229);
+  background-color: rgb(11, 116, 229);
   cursor: pointer;
   padding: 10px;
 }

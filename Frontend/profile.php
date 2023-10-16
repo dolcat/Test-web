@@ -43,9 +43,9 @@ else {
                     </div>
                     <ul class="category_profile">
                         <li><a href=""><i class="cate_profile_icon fa-solid fa-user"></i><span>Thông tin tài khoản</span></a></li>
-                        <li><a href=""><i class="cate_profile_icon fa-solid fa-cart-shopping"></i></i></i><span>Giỏ hàng</span></a></li>
-                        <li><a href=""><i class="cate_profile_icon fa-solid fa-box-open"></i><span>Đơn hàng</span></a></li>
-                        <li><a href=""><i class="cate_profile_icon fa-solid fa-right-from-bracket"></i></i><span>Đăng xuất</span></a></li>
+                        <li><a href="Cart.php"><i class="cate_profile_icon fa-solid fa-cart-shopping"></i></i></i><span>Giỏ hàng</span></a></li>
+                        <li><a href="Order.php"><i class="cate_profile_icon fa-solid fa-box-open"></i><span>Đơn hàng</span></a></li>
+                        <li><a href="logout.php"><i class="cate_profile_icon fa-solid fa-right-from-bracket"></i></i><span>Đăng xuất</span></a></li>
                     </ul>
                 </aside>
                 <div class="right_column">
