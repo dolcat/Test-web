@@ -31,6 +31,10 @@ if (isset($_SESSION['id_customer'])) {
         .grid_column-2-4:hover {
             text-decoration: none;
         }
+        a:hover{
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -97,22 +101,7 @@ if (isset($_SESSION['id_customer'])) {
                 <form action="searching.php" method="GET">
                     <div class="header_search" style="flex: 1;">
                         <input type="text" class="header_search_input" placeholder="Tìm kiếm sách bạn muốn..." name="key_word">
-                        <!-- <div class="header_search_selection">
-                        <span class="header_search_select-label">Thể loại</span>
-                        <i class="header_search_select-icon fa-solid fa-chevron-down" style="padding: 0 16px;"></i>
-                        <ul class="header_search-option">
-                            <li class="header_search_option-item">
-                                <span>Triết học</span>
-                            </li>
-                            <li class="header_search_option-item">
-                                <span>Khoa học</span>
-                            </li>
-                            <li class="header_search_option-item">
-                                <span>Y học</span>
-                            </li>
-                        </ul>
-                    </div> -->
-                        <button class="header_search_btn" name="btn_search">
+                        <button class="header_search_btn" name="btn_search" style="width: 40px;">
                             <i class="header_search_btn-icon fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>

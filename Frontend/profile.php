@@ -102,7 +102,7 @@ else {
                                     <div class="form-control">
                                         <div class="label_name">Số điện thoại</div>
                                         <div class="input_info name">
-                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="0<?php echo $phone ?>">
+                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">

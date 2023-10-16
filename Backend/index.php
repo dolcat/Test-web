@@ -21,10 +21,10 @@ $query = mysqli_query($conn, $sql);
                         <a href="quanlydanhmuc.php">Quản lý danh mục</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Quản lý đơn hàng</a>
+                        <a href="quanlydonhang.php">Quản lý đơn hàng</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Quản lý tài khoản</a>
+                        <a href="quanlytaikhoan.php">Quản lý tài khoản</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="insertBook.php"><button class="btn_seaching">Thêm sản phẩm</button></a>

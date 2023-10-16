@@ -7,7 +7,6 @@ if(isset($_GET['id_order'])){
     $id_order = $_GET['id_order'];
 }
 $queryXemdonhang = mysqli_query($conn, "SELECT * FROM array_book INNER JOIN book_list ON array_book.id_book = book_list.id_book WHERE id_order = '$id_order'");
-$donhang_chitiet = mysqli_fetch_array($queryXemdonhang);
 
 ?><head>
     <title>Quản lý đơn hàng</title>

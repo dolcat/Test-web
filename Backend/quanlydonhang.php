@@ -2,12 +2,14 @@
 include("header.php");
 $sqldonhang = "SELECT * FROM don_hang";
 $query = mysqli_query($conn, $sqldonhang);
-?><head>
+?>
+
+<head>
     <title>Quản lý đơn hàng</title>
     <style>
-        h4{
+        h4 {
             margin: 10px 0px 10px 10px;
-            
+
         }
     </style>
 </head>
@@ -45,11 +47,11 @@ $query = mysqli_query($conn, $sqldonhang);
                         <thead class="thead-dark">
                             <tr>
                                 <th class="col-md-1">ID đơn hàng</th>
-								<th class="col-md-1">ID khách hàng</th>
+                                <th class="col-md-1">ID khách hàng</th>
                                 <th class="col-md-2">Tên khách hàng</th>
-								<th class="col-md-2">Tổng tiền</th>
-								<th class="col-md-2">Phương thức thanh toán</th>
-								<th class="col-md-2">Ngày đặt</th>
+                                <th class="col-md-2">Tổng tiền</th>
+                                <th class="col-md-2">Phương thức thanh toán</th>
+                                <th class="col-md-2">Ngày đặt</th>
                                 <th class="col-md-1">Chức năng</th>
                             </tr>
                         </thead>
@@ -57,14 +59,16 @@ $query = mysqli_query($conn, $sqldonhang);
                             <?php while ($row = mysqli_fetch_array($query)) { ?>
                                 <tr>
                                     <td class="col-md-1"><?php echo $row['id_order'] ?></td>
-									<td class="col-md-1"><?php echo $row['id_customer'] ?></td>
+                                    <td class="col-md-1"><?php echo $row['id_customer'] ?></td>
                                     <td class="col-md-2"><?php echo $row['name'] ?></td>
-									<td class="col-md-2"><?php echo $row['total_money'] ?></td>
-									<td class="col-md-2"><?php echo $row['payment'] ?></td>
-									<td class="col-md-2"><?php echo $row['date'] ?></td>
-                                    <td class="col-md-2">
-                                        <a href="Xemdonhang.php?id_order=<?php echo $row['id_order'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Xem</button></a>
-                                        <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
+                                    <td class="col-md-2"><?php echo $row['total_money'] ?></td>
+                                    <td class="col-md-2"><?php echo $row['payment'] ?></td>
+                                    <td class="col-md-2"><?php echo $row['date'] ?></td>
+                                    <td class="col-md-3" style="display: flex; flex-direction: row;">
+                                        <a style="margin: 5px;" href="xemdonhang.php?id_order=<?php echo $row['id_order'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Xem</button></a>
+                                        <a style="margin: 5px;" href="xemdonhang.php?id_order=<?php echo $row['id_order'] ?>">
+                                            <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
+                                        </a>
 
                                     </td>
                                 </tr>

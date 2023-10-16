@@ -141,11 +141,13 @@ color: var(--text-header);
 }
 
 .header_search_btn-icon{
+
   font-size: 1.6rem;
   color: #fff;
 }
 
 .header_search_btn{
+  width: 20px;
   background-color: #ccc;
   border: none;
   height: 36px;
