@@ -217,6 +217,12 @@ margin-left: -12px;
 margin-right: -12px;
 }
 
+.grid_column-7-0{
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 30%;
+}
+
 .grid_column-3-0{
 padding-left: 12px;
 padding-right: 12px;

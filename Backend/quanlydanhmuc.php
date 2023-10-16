@@ -30,9 +30,6 @@ $query = mysqli_query($conn, $sqlDanhMuc);
                 <li class="list-inline-item">
                     <a href="#">Quản lý tài khoản</a>
                 </li>
-                <li class="list-inline-item">
-                    <a href="insertBook.php"><button class="btn_seaching">Thêm sản phẩm</button></a>
-                </li>
             </ul>
         </div>
         <div class="col-md-7">

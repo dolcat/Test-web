@@ -1,7 +1,15 @@
 <?php include_once('connect.php');
 $id_user = "";
-if(isset($_SESSION['id_user'])){
-$id_user =$_SESSION['id_user'];
+$id_customer = "";
+if (isset($_SESSION['id_user'])) {
+    $id_user = $_SESSION['id_user'];
+} else {
+    unset($id_user);
+}
+if (isset($_SESSION['id_customer'])) {
+    $id_customer = $_SESSION['id_customer'];
+} else {
+    unset($id_customer);
 }
 ?>
 <!DOCTYPE html>

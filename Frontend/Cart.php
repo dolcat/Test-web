@@ -1,93 +1,135 @@
 <?php
-	include('header.php');
+include('header.php');
+$cart = "";
+if (isset($_SESSION['id_customer'])) {
+	$sql = "SELECT DISTINCT * FROM `book_list`,cart WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;";
+	$query = mysqli_query($conn, $sql);
+}
+$i = 0;
+$tong_tien = 0;
 ?>
-	<!---------------------- Cart --------------------->
-	<section class = "cart">
-	<div class="container">
-		<div class="cart-top-wrap">
-			<div class="cart-top">
-				<div class="cart-top-cart cart-top-item">
-					<i class="fas fa-shopping-cart"></i>
+
+<head>
+	<title>Giỏ hàng</title>
+	<style>
+		.table_content_book td {
+			border-right: 1px solid #DDDDDD;
+			border-bottom: 1px solid #DDDDDD;
+		}
+
+		a:hover {
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.table_content_book th {
+			border-bottom: 1px solid #DDDDDD;
+		}
+	</style>
+</head>
+<!---------------------- Cart --------------------->
+<section class="cart">
+	<div class="grid">
+		<div class="grid-row">
+			<div class="label_heading_cart">
+				<h4>Giỏ hàng</h4>
+			</div>
+			<div class="cart_infomation">
+				<div class="cart-cotent-left">
+					<div class="state_line">
+						<div class="cart-top-wrap">
+							<div class="cart-top">
+								<div class="cart-top-cart cart-top-item">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+								<div class="cart-top-address cart-top-item">
+									<i class="fas fa-map-marked-alt"></i>
+								</div>
+								<div class="cart-top-payment cart-top-item">
+									<i class="fas fa-money-check-alt"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cart-content-book">
+						<table class="table_content_book">
+							<tbody>
+								<tr style=" text-align: center;">
+									<th style="width: 5%;">STT</th>
+									<th style="width: 20%;">Ảnh sản phẩm</th>
+									<th style="width: 45%;">Thông tin sản phẩm</th>
+									<th style="width: 10%;">Số lượng</th>
+									<th style="width: 15%;">Giá sản phẩm (VND)</th>
+									<th style="width: 5%;">Xóa</th>
+								</tr>
+								<?php
+								if (isset($_SESSION['id_user']) && $query == true) {
+
+									while ($cart = mysqli_fetch_array($query)) {
+								?>
+										<tr>
+											<td style="text-align:center;"><?php echo $i ?></td>
+											<td>
+												<div class="img_item" style="background-image: url(<?php echo $cart['img'] ?>);"></div>
+											</td>
+											<td style="text-align:start; padding: 5px; font-size: 20px;">
+												Tiêu đề: <?php echo $cart['title'] . '</br>' ?>
+												Tác giả: <?php echo $cart['author'] . '</br>' ?>
+												Nhà xuất bản: <?php echo $cart['publisher'] . '</br>' ?>
+												Nhà sách: <?php echo $cart['bookstore'] . '</br>' ?>
+											</td>
+											<td style="text-align:center; font-size: 1.3rem;"><?php echo $cart['number_cart'] ?></td>
+											<td style="text-align:end; padding: 5px; font-size: 20px;">
+												<?php echo ($cart['price'] * $cart['number_cart']) ?>
+											</td>
+											<td style="text-align:center;"><a href="Cart_del.php?ID_book=<?php echo $id_book[$i] ?>">Xóa</a></td>
+										</tr>
+								<?php
+										$tong_tien += $cart['price'];
+										$i++;
+									}
+								}
+								?>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				<div class="cart-top-address cart-top-item">
-					<i class="fas fa-map-marked-alt"></i>
-				</div>
-				<div class="cart-top-payment cart-top-item">
-					<i class="fas fa-money-check-alt"></i>
+				<div class="cart-content-right">
+					<div class="box_pay">
+						<table class="table_content_pay" style="margin-top: 10px;">
+							<tr>
+								<th colspan="2" style="font-size: 20px;">Tổng tiền giỏ hàng</th>
+							</tr>
+							<tr>
+								<td style="font-size: 17px; font-weight: 400;">Tổng sản phẩm</td>
+								<td style="padding-right: 5px; font-size: 17px;"><?php echo $i ?></td>
+							</tr>
+							<tr>
+								<td>Tổng tiền hàng</td>
+								<td>
+									<p><?php echo $tong_tien; ?> VNĐ</p>
+								</td>
+							</tr>
+						</table>
+						<div class="cart-content-right-text">
+							<?php
+							if ($tong_tien > 2000000) { ?>
+								<p>Bạn sẽ được miễn phí ship vì đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>
+							<?php } else { ?>
+								<p style="color: red; font-weight: bold; font-size:18px; ">Mua thêm <span style="font-size:18px"><?php echo 2000000 - $tong_tien ?> </span> VNĐ để được miễn phí ship</p>
+							<?php } ?>
+						</div>
+						<div class="cart-content-right-button" style="padding-bottom: 10px;">
+							<a href="fanpages.php"><button>TIẾP TỤC MUA SẮM</button></a>
+							<a href="Pay.php"><button>THANH TOÁN</button></a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="cart-cotent-row">
-			<div style="margin-left: 30px" class="cart-cotent-left1">
-				<table width="883" border="1">
-				  <tbody>
-					<tr>
-						<th >STT</th>
-					  <th width="128" >Ảnh sản phẩm</th>
-					  <th width="509" >Tên sản phẩm</th>
-					  <th width="79" >Giá sản phẩm</th>
-					  <th width="33" >Xóa</th>
-					</tr>
-					  <?php
-                    $i = 0;
-                    $tongtien = 0;
-                    while($row = mysqli_fetch_object($result_giohang)){
-                    $i++;
-                    $id_book = $row -> id_book ;
-                    $ten_sp = $row -> title;
-                    $img = $row -> img;
-                    $price = $row -> price;
-					$number_cart = $row -> number_cart;
-                    $tien = $price * $number_cart;
-                    $tongtien += $tien;
-                ?>
-    <tr>
-      	<td><?php echo $i;?></td>
-      	<td><?php ?></td>
-      	<td><?php echo $title ?></td>
-		<td><?php echo $price ?></td>
-		<td><a href="Cart_del.php?ID_book=<?php echo $id_book[$i]?>">Xóa</a></td>
-    </tr>
-	  <?php
-	  }
-	  ?>
-				  </tbody>
-				</table>
-			</div>
-			<div class="cart-content-right">
-				<table>
-					<tr>
-						<th colspan="2">Tổng tiền giỏ hàng</th>
-					</tr>
-					<tr>
-						<td>Tổng sản phẩm</td>
-						<td><?php echo $i ?></td>
-					</tr>
-					<tr>
-						<td>Tổng tiền hàng</td>
-						<td><p><?php  echo $tongtien; ?> VNĐ</p></td>
-					</tr>
-				</table>
-				<div class="cart-content-right-text">
-					<?php
-						if($tongtien > 2000000){ ?>
-							<p>Bạn sẽ được miễn phí ship vì đơn hàng của bạn có tổng giá trị trên 2.000.000 VNĐ</p>
-						<?php }
-						else{ ?>
-							<p stype="color: red; font-weight: bold">Mua thêm <span style="font-size:18px"><?php 2000000 - $tongtien ?> </span> VNĐ để được miễn phí ship</p>
-						<?php } ?>
-				</div>
-				<div class="cart-content-right-button">
-					<a href="fanpages.php"><button>TIẾP TỤC MUA SẮM</button></a>
-					<a href="Pay.php"><button>THANH TOÁN</button></a>
-				</div>
-			</div>
-		</div>		
-	</div>
-	</section>
-	<!-- footer -->
-    <?php include("footer.php");?>
+</section>
+<!-- footer -->
+<?php include("footer.php"); ?>
 </body>
+
 </html>
