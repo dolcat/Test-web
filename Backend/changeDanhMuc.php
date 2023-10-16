@@ -9,9 +9,7 @@ if(isset($_GET['id_danhmuc'])){
 $queryChangeDm = mysqli_query($conn, "SELECT * FROM danh_muc WHERE id_danhmuc = '$id'");
 $danhmuc = mysqli_fetch_array($queryChangeDm);
 
-?>
-
-<head>
+?><head>
     <title>Quản lý danh mục</title>
     <style>
         h4{
@@ -21,6 +19,8 @@ $danhmuc = mysqli_fetch_array($queryChangeDm);
     </style>
 </head>
 
+
+
 <div class="container" style="width: 100%; margin-bottom: 100px;">
     <div class="row">
         <div class="tool_bar">
@@ -29,13 +29,13 @@ $danhmuc = mysqli_fetch_array($queryChangeDm);
                     <a href="index.php">Quản lý sản phẩm</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" style="color: blue;">Quản lý danh mục</a>
+                    <a href="quanlydanhmuc.php" style="color: blue;">Quản lý danh mục</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="#">Quản lý đơn hàng</a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#">Quản lý tài khoản</a>
+                    <a href="quanlytaikhoan.php">Quản lý tài khoản</a>
                 </li>
                 <li class="list-inline-item">
                     <a href="insertBook.php"><button class="btn_seaching">Thêm sản phẩm</button></a>
@@ -64,7 +64,6 @@ $danhmuc = mysqli_fetch_array($queryChangeDm);
                                     <td class="col-md-2">
                                         <a href="changeDanhMuc.php?id_danhmuc=<?php echo $row['id_danhmuc'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Sửa</button></a>
                                         <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa?" onclick="btn_delete()">Xóa</button>
-
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -94,13 +93,13 @@ $danhmuc = mysqli_fetch_array($queryChangeDm);
     </div>
 </div>
 <script>
-    var id = document.querySelector(".id_book");
+    var id = document.querySelector(".id_danhmuc");
 
     function btn_delete() {
-        var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
+        var response = confirm("Bạn có chắc chắn xóa danh mục này không?");
         if (response == true) {
-            var id_book = parseInt(id.innerText);
-            var link = "exeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            var id_danhmuc = parseInt(id.innerText);
+            var link = "exeDeleteDm.php?id_muc=" + encodeURIComponent(id_danhmuc);
             window.location.href = link;
         }
     }

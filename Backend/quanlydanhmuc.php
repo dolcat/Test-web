@@ -83,9 +83,11 @@ $query = mysqli_query($conn, $sqlDanhMuc);
     </div>
 </div>
 <script>
+
     function btn_delete() {
-        var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
+        var response = confirm("Bạn có chắc chắn xóa danh mục này không?");
         if (response == true) {
+            var id_danhmuc = parseInt(id.innerText);
             var link = "exeDeleteDm.php";
             window.location.href = link;
         }
