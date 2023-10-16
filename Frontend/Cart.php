@@ -64,7 +64,6 @@ $tong_tien = 0;
 								</tr>
 								<?php
 								if (isset($_SESSION['id_user']) && $query == true) {
-
 									while ($cart = mysqli_fetch_array($query)) {
 								?>
 										<tr>
