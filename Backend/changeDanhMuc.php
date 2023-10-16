@@ -94,13 +94,13 @@ $danhmuc = mysqli_fetch_array($queryChangeDm);
     </div>
 </div>
 <script>
-    var id = document.querySelector(".id_book");
+    var id = document.querySelector(".id_danhmuc");
 
     function btn_delete() {
-        var response = confirm("Bạn có chắc chắn xóa sản phẩm này không?");
+        var response = confirm("Bạn có chắc chắn xóa danh mục này không?");
         if (response == true) {
-            var id_book = parseInt(id.innerText);
-            var link = "exeDeleteBook.php?id_book=" + encodeURIComponent(id_book);
+            var id_danhmuc = parseInt(id.innerText);
+            var link = "exeDeleteBook.php?id_danhmuc=" + encodeURIComponent(id_danhmuc);
             window.location.href = link;
         }
     }
