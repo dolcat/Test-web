@@ -524,6 +524,7 @@
 .profile_content {
   margin-top: 10px;
   background-color: #F5F5FA;
+  padding-bottom: 10px;
 }
 
 .infomation {
@@ -661,6 +662,12 @@
 }
 
 .info_left {
+  width: 530px;
+  padding: 16px 24px 16px 16px;
+  border-right: 1px solid #E2E2E3 ;
+}
+
+.info_right{
   width: 530px;
   padding: 16px 24px 16px 16px;
 }

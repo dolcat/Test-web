@@ -23,11 +23,21 @@ $queryOrder = "";
 $price = 0;
 $resultOrder = "";
 $id_b = "";
-if (isset($_GET['price']) && isset($_SESSION['id_customer'])) {
+
+if(isset($_GET['price'])){
+    $_SESSION['stateArr'] = $_GET['price'];
+}
+
+if(isset($_GET['id_book'])){
+    $_SESSION['stateOne'] = $_GET['id_book'];
+}
+
+if (isset($_SESSION['stateArr']) && isset($_SESSION['id_customer'])) {
+
     $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
     $id_b = "cus";
-} else if (isset($_GET['id_book'])) {
-    $id = $_GET['id_book'];
+} else if ($_SESSION['stateOne'] && isset($_SESSION['id_customer'])) {
+    $id = $_SESSION['stateOne'];
     $id_b = $id;
     $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");
 }

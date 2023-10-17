@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+unset($_SESSION['stateOne']);
+unset($_SESSION['stateArr']);
 $name = "";
 if (isset($_SESSION['id_user'])) {
 	$sql_select_customer = "SELECT * FROM `customer` WHERE `id_user` = '$id_user'";
