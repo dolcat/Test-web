@@ -50,7 +50,8 @@ if (isset($_SESSION['id_user'])) {
                         <div class="infor_detail_order">
 							
                             <span class="info_title_order">Thông tin đơn hàng</span>
-                                                        <div class="box_order">
+							
+                                <div class="box_order">
                                 <div class="detail_info_order_left">
                                     <div class="order_detail_column">
                                         <label class="label">Tên đơn hàng: </label>
@@ -64,21 +65,7 @@ if (isset($_SESSION['id_user'])) {
                                         <label class="label">Thời gian mua: </label>
                                         <label><?php echo $date = $don_hang['date']; ?></label>
                                     </div>
-                                    <div class="order_detail_column">
-                                        <label class="label">Danh sách sản phẩm đã mua: </label>
-										<?php
-											$id_order = $don_hang['id_order'];
-											$sql_array = "SELECT * FROM array_book INNER JOIN book_list ON array_book.id_book = book_list.id_book WHERE id_order = '$id_order'";
-											$check1 = mysqli_query($conn, $sql_array);
-											if (isset($_SESSION['id_user']) && $check == true) {
-												while ($array_book = mysqli_fetch_array($check1)) {
-											?>
-                                        		<label><?php echo $array_book['title'] ?></label>
-												<p>, </p>
-										<?php }
-											}
-										?>
-                                    </div>
+                                    
                                 </div>
                                 <div class="detail_info_order_right">
                                     <div class="order_detail_column">
@@ -96,7 +83,21 @@ if (isset($_SESSION['id_user'])) {
                                 </div>
 								
                             </div>
-
+								<div class="order_book_list">
+                                        <label class="label">Danh sách sản phẩm đã mua: </label>
+										<?php
+											$id_order = $don_hang['id_order'];
+											$sql_array = "SELECT * FROM array_book INNER JOIN book_list ON array_book.id_book = book_list.id_book WHERE id_order = '$id_order'";
+											$check1 = mysqli_query($conn, $sql_array);
+											if (isset($_SESSION['id_user']) && $check == true) {
+												while ($array_book = mysqli_fetch_array($check1)) {
+											?>
+                                        		<label style="margin: 0;"><?php echo $array_book['title'].'; ' ?></label>
+												
+										<?php }
+											}
+										?>
+                                    </div>
                         </div>
 						<?php
 									}
