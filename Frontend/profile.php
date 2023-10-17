@@ -122,7 +122,7 @@ else {
                         </div>
                         <div class="info_center"></div>
                         <div class="info_right">
-							<form class="frm_up_pass" action="ChangePass.php" method="post">
+							<form class="frm_up_pass" action="changePass.php" method="post">
 								<div class="form-control">
                                         <div class="label_name">Mật khẩu cũ</div>
                                         <div class="input_info name">
