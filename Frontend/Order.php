@@ -58,19 +58,19 @@ if (isset($_SESSION['id_user'])) {
                             <span class="info_title_order">Thông tin đơn hàng</span>
                             <div class="detail_info_order">
                                 <div class="order_detail_column">
-                                    <label class="label">Tên đơn hàng</label>
+                                    <label class="label">Tên đơn hàng: </label>
                                     <label><?php echo $name?></label>
                                 </div>
                                 <div class="order_detail_column">
-                                    <label class="label">Tên đơn hàng</label>
+                                    <label class="label">Tổng tiền: </label>
                                     <label><?php echo $name?></label>
                                 </div>
                                 <div class="order_detail_column">
-                                    <label class="label">Tên đơn hàng</label>
+                                    <label class="label">Thời gian mua: </label>
                                     <label><?php echo $name?></label>
                                 </div>
                                 <div class="order_detail_column">
-                                    <label class="label">Tên đơn hàng</label>
+                                    <label class="label">Danh sách sản phẩm đã mua: </label>
                                     <label><?php echo $name?></label>
                                 </div>
                             </div>
