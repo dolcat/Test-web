@@ -11,6 +11,8 @@ if (isset($_SESSION['id_customer'])) {
 } else {
     unset($id_customer);
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

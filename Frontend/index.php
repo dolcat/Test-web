@@ -23,7 +23,7 @@ include('header.php');
                         while ($dm = mysqli_fetch_array($query_dm)) {
                         ?>
                             <li class="category_item">
-                                <a href="searching.php?" class="category_item_link" onclick="sendDanhMuc(<?php echo $dm['id_danhmuc'] ?>)"><?php echo $dm['ten_danhmuc'] ?></a>
+                                <a href="searching.php" class="category_item_link" onclick="sendDanhMuc(<?php echo $dm['id_danhmuc'] ?>)"><?php echo $dm['ten_danhmuc'] ?></a>
                             </li>
                         <?php } ?>
                     </ul>

@@ -1,10 +1,6 @@
 <?php
 include('header.php');
 
-if(isset($_COOKIE['danhmuc'])){
-    $id = $_COOKIE['danhmuc'];
-    
-}
 ?>
 
 <head>
@@ -59,9 +55,13 @@ if(isset($_COOKIE['danhmuc'])){
                     $keyword = "";
                     if (isset($_GET['key_word'])) {
                         $keyword = $_GET['key_word'];
-                        $sql = "Select * from book_list where title like '%" . $keyword . "%' order by id_book asc;";
-                    } else {
-                        $sql = "select * from book_list;";
+                        $sql = "SELECT * from book_list where title like '%" . $keyword . "%' order by id_book asc;";
+                    } else if(isset($_COOKIE['danhmuc'])) {
+                        $keyword = $_COOKIE['danhmuc'];
+                        $sql = "SELECT * from book_list where id_danhmuc = '$keyword'  order by id_book asc;";                       
+                    }
+                    else{
+                        $sql = "SELECT * from book_list";
                     }
 
                     $query = mysqli_query($conn, $sql);

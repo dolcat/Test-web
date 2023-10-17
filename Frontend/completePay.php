@@ -1,5 +1,23 @@
 <?php
 include("header.php");
+$name = "";
+$phone = "";
+$address = "";
+
+if (isset($_SESSION['id_user'])) {
+    $sql_profile = "SELECT * FROM customer,account WHERE customer.id_user = '$id_user' AND customer.id_user = account.id_user";
+    $check = mysqli_query($conn, $sql_profile);
+    if ($check == true) {
+        $profile = mysqli_fetch_array($check);
+        $name = $profile['name'];
+        $phone = $profile['phone'];
+        $address = $profile['address'];
+    }
+} else {
+    $name = "Nhập họ tên";
+    $phone = "Nhập số điện thoại";
+    $address = "Nhập địa chỉ";
+}
 ?>
 
 <section class="cart">
@@ -30,26 +48,26 @@ include("header.php");
                             <div class="payment-content-left-method-delivery">
                                 <p>Phương thức giao hàng</p>
                                 <div class="payment-content-left-method-delivery-item">
-                                    <input type="checkbox">
-                                    <label for="">Giao hàng siêu tiết kiệm</label>
+                                    <input type="radio" name="delivery_method" value="Giao hàng tiết kiệm">
+                                    <label for="">Giao hàng tiết kiệm</label>
                                 </div>
                                 <div class="payment-content-left-method-delivery-item">
-                                    <input type="checkbox">
+                                    <input type="radio" name="delivery_method" value="Giao hàng chuyển phát nhanh">
                                     <label for="">Giao hàng chuyển phát nhanh</label>
                                 </div>
                             </div>
                             <div class="payment-content-left-method-delivery">
                                 <p>Phương thức thanh toán</p>
                                 <div class="payment-content-left-method-payment-item">
-                                    <input checked name="method-payment" type="radio">
+                                    <input checked name="method-payment" type="radio" value="Trả tiền trực tiếp">
                                     <label for="">Trả tiền trực tiếp</label>
                                 </div>
                                 <div class="payment-content-left-method-payment-item">
-                                    <input name="method-payment" type="radio">
+                                    <input name="method-payment" type="radio" value="Thẻ tín dụng(OnePay)">
                                     <label for="">Thanh toán bằng thẻ tín dụng(OnePay)</label>
                                 </div>
                                 <div class="payment-content-left-method-payment-item">
-                                    <input name="method-payment" type="radio">
+                                    <input name="method-payment" type="radio" value="Thẻ ATM(OnePay)">
                                     <label for="">Thanh toán bằng thẻ ATM(OnePay)</label>
                                 </div>
                                 <div class="payment-content-left-method-payment-item-img">
@@ -63,15 +81,14 @@ include("header.php");
                         </div>
                     </div>
                     <?php
-                    $queryOrder = ""; $price = 0;
+                    $queryOrder = "";
+                    $price = 0;
                     $resultOrder = "";
                     if (isset($_GET['price']) && isset($_SESSION['id_customer'])) {
                         $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
-                        
                     } else if (isset($_GET['id_book'])) {
                         $id = $_GET['id_book'];
                         $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");
-                       
                     }
 
                     ?>
@@ -84,20 +101,20 @@ include("header.php");
                                 <tr>
                                     <td style="font-size: 17px; font-weight: 400; height: auto; width: fit-content;">Danh sách sản phẩm: </td>
                                     <td style="padding-right: 5px; font-size: 17px;">
-                                    <?php 
-                                    if($queryOrder){
-                                        while($resultOrder = mysqli_fetch_array($queryOrder)){
-                                            echo $resultOrder['title'] .'; ';
-                                            $price += $resultOrder['price'];
+                                        <?php
+                                        if ($queryOrder) {
+                                            while ($resultOrder = mysqli_fetch_array($queryOrder)) {
+                                                echo $resultOrder['title'] . '; ';
+                                                $price += $resultOrder['price'];
+                                            }
                                         }
-                                    }
-                                    ?>
+                                        ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Tổng tiền đơn hàng: </td>
                                     <td>
-                                        <?php echo $price?> VNĐ
+                                        <?php echo $price ?> VNĐ
                                     </td>
                                 </tr>
                             </table>
@@ -107,19 +124,21 @@ include("header.php");
                             <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
                                 <div class="form-group_infor">
                                     <label for="name">Tên người nhận</label>
-                                    <input type="text" class="input_infor" name="name" value="">
+                                    <input type="text" class="input_infor" name="name" value="<?php echo $name ?>">
                                 </div>
                                 <div class="form-group_infor">
                                     <label for="phone">Số điện thoại</label>
-                                    <input type="tel" maxlength="10" class="input_infor" name="phone" value="">
+                                    <input type="tel" maxlength="10" class="input_infor" name="phone" value="<?php echo $phone ?>">
                                 </div>
                                 <div class="form-group_infor">
                                     <label for="address">Địa chỉ nhận hàng (lưu ý: chỉ chuyển trong nội quốc)</label>
-                                    <input type="a" class="input_infor" name="address" value="">
+                                    <input type="a" class="input_infor" name="address" value="<?php echo $address ?>">
                                 </div>
                                 <div class="form-group_infor_button">
-                                    <button type="submit" class="btn_seaching">Lưu xác nhận thông tin</button>
-                                    <button type="submit" class="btn_seaching">Hoàn tất thanh toán</button>
+                                    <a href="updateInforPay.php" style="width: 46%; margin: 5px;">
+                                        <button type="submit" style="width: 100%;" class="btn_seaching">Lưu xác nhận thông tin</button></a>
+                                    <a href="" style="width: 46%; margin: 5px;">
+                                        <button type="submit" style="width: 100%;" class="btn_seaching">Hoàn tất thanh toán</button></a>
                                 </div>
                             </form>
                         </div>
