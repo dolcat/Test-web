@@ -102,13 +102,13 @@ else {
                                     <div class="form-control">
                                         <div class="label_name">Số điện thoại</div>
                                         <div class="input_info name">
-                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
+                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="">
                                         </div>
                                     </div>
                                     <div class="form-control">
                                         <div class="label_name">Email</div>
                                         <div class="input_info name">
-                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="<?php echo $email ?>">
+                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="">
                                         </div>
                                     </div>
                                     <div class="form-control">
@@ -121,7 +121,34 @@ else {
                             </div>
                         </div>
                         <div class="info_center"></div>
-                        <div class="info_right"></div>
+                        <div class="info_right">
+							<form class="frm_up_pass" action="ChangePass.php" method="post">
+								<div class="form-control">
+                                        <div class="label_name">Mật khẩu cũ</div>
+                                        <div class="input_info name">
+                                            <input type="pass" class="input" name="pass_old" maxlength="10" placeholder="Nhập mật khẩu cũ" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="label_name">Mật khẩu mới</div>
+                                        <div class="input_info name">
+                                            <input type="pass" class="input" name="new_pass" maxlength="128" placeholder="Nhập mật khẩu mới" value="">
+                                        </div>
+                                    </div>
+									<div class="form-control">
+											<div class="label_name">Nhập lại mật khẩu</div>
+											<div class="input_info name">
+												<input type="pass" class="input" name="new_pass1" maxlength="128" placeholder="Nhập lại mật khẩu" value="">
+											</div>
+									</div>
+                                    <div class="form-control">
+                                        <div class="label_name">&nbsp;</div>
+                                        <div class="input_info name">
+                                            <button class="btn_submit" type="submit">Đổi mật khẩu</button>
+                                        </div>
+                                    </div>
+							</form>
+						</div>
                     </div>
                 </div>
             </div>
