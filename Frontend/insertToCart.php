@@ -9,8 +9,7 @@ if (isset($_SESSION['id_customer']) && isset($_GET['id_book'])) {
     $bookCheck = "";
     $number = 0;
     if ($queryBook) {
-        $arr = mysqli_fetch_array($queryBook);
-        for ($i = 0; $i < sizeof($arr); $i++) {
+        while ($arr = mysqli_fetch_array($queryBook)) {
             if ($id_book == $arr['id_book']) {
                 $bookCheck = true;
                 $number = $arr['number_cart'];
