@@ -364,7 +364,26 @@ label {
 
 }
 
+.btn_completePay{
+	display: flex;
+	width: 100%;
+	margin: 10px 0px;
+	padding-left: 2px;
+}
+
+
+.btn_complete_pay{
+	height: 30px;
+	background-color: rgb(11, 116, 219);
+	border-radius: 5px;
+	color: white;
+	border: none;
+}
+
+
+
 .form_infor_user_payment{
+	padding-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	background-color: white;

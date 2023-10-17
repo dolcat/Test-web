@@ -45,6 +45,7 @@ if (isset($_SESSION['id_user'])) {
 						<?php
 								if (isset($_SESSION['id_user']) && $check == true) {
 									while ($don_hang = mysqli_fetch_array($check)) {
+
 								?>
 
                         <div class="infor_detail_order">
@@ -89,7 +90,7 @@ if (isset($_SESSION['id_user'])) {
 											$id_order = $don_hang['id_order'];
 											$sql_array = "SELECT * FROM array_book INNER JOIN book_list ON array_book.id_book = book_list.id_book WHERE id_order = '$id_order'";
 											$check1 = mysqli_query($conn, $sql_array);
-											if (isset($_SESSION['id_user']) && $check == true) {
+											if (isset($_SESSION['id_user']) && $check1 == true) {
 												while ($array_book = mysqli_fetch_array($check1)) {
 											?>
                                         		<label style="margin: 0;"><?php echo $array_book['title'].'; ' ?></label>

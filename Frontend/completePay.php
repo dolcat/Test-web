@@ -18,7 +18,22 @@ if (isset($_SESSION['id_user'])) {
     $phone = "Nhập số điện thoại";
     $address = "Nhập địa chỉ";
 }
+
+$queryOrder = "";
+$price = 0;
+$resultOrder = "";
+$id_b = "";
+if (isset($_GET['price']) && isset($_SESSION['id_customer'])) {
+    $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
+    $id_b = "cus";
+} else if (isset($_GET['id_book'])) {
+    $id = $_GET['id_book'];
+    $id_b = $id;
+    $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");
+}
+
 ?>
+
 
 <section class="cart">
     <div class="grid">
@@ -44,54 +59,54 @@ if (isset($_SESSION['id_user'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="information_payment">
-                            <div class="payment-content-left-method-delivery">
-                                <p>Phương thức giao hàng</p>
-                                <div class="payment-content-left-method-delivery-item">
-                                    <input type="radio" name="delivery_method" value="Giao hàng tiết kiệm">
-                                    <label for="">Giao hàng tiết kiệm</label>
-                                </div>
-                                <div class="payment-content-left-method-delivery-item">
-                                    <input type="radio" name="delivery_method" value="Giao hàng chuyển phát nhanh">
-                                    <label for="">Giao hàng chuyển phát nhanh</label>
-                                </div>
-                            </div>
-                            <div class="payment-content-left-method-delivery">
-                                <p>Phương thức thanh toán</p>
-                                <div class="payment-content-left-method-payment-item">
-                                    <input checked name="method-payment" type="radio" value="Trả tiền trực tiếp">
-                                    <label for="">Trả tiền trực tiếp</label>
-                                </div>
-                                <div class="payment-content-left-method-payment-item">
-                                    <input name="method-payment" type="radio" value="Thẻ tín dụng(OnePay)">
-                                    <label for="">Thanh toán bằng thẻ tín dụng(OnePay)</label>
-                                </div>
-                                <div class="payment-content-left-method-payment-item">
-                                    <input name="method-payment" type="radio" value="Thẻ ATM(OnePay)">
-                                    <label for="">Thanh toán bằng thẻ ATM(OnePay)</label>
-                                </div>
-                                <div class="payment-content-left-method-payment-item-img">
-                                    <img src="images/ATM.png" alt="">
-                                </div>
 
-                                <p style="color: #FD6670; font-weight:400; line-height: 150%; font-size: 20px;">
-                                    Lưu ý: Mọi giao dịch đều được bảo mật và mã hóa. Thông tin thẻ tín dụng sẽ không bao giờ được lưu lại.
-                                </p>
-                            </div>
+                        <div class="information_payment">
+                            <form action="addingOrder.php" method="post">
+                                <div class="payment-content-left-method-delivery">
+                                    <p>Phương thức giao hàng</p>
+                                    <div class="payment-content-left-method-delivery-item">
+                                        <input checked type="radio" name="delivery_method" value="Giao hàng tiết kiệm">
+                                        <label for="delivery_method">Giao hàng tiết kiệm</label>
+                                    </div>
+                                    <div class="payment-content-left-method-delivery-item">
+                                        <input type="radio" name="delivery_method" value="Giao hàng chuyển phát nhanh">
+                                        <label for="delivery_method">Giao hàng chuyển phát nhanh</label>
+                                    </div>
+
+                                </div>
+                                <div class="payment-content-left-method-delivery">
+                                    <p>Phương thức thanh toán</p>
+
+                                    <div class="payment-content-left-method-payment-item">
+                                        <input checked name="method-payment" type="radio" value="Trả tiền trực tiếp">
+                                        <label for="">Trả tiền trực tiếp</label>
+                                    </div>
+                                    <div class="payment-content-left-method-payment-item">
+                                        <input name="method-payment" type="radio" value="Thẻ tín dụng(OnePay)">
+                                        <label for="">Thanh toán bằng thẻ tín dụng(OnePay)</label>
+                                    </div>
+                                    <div class="payment-content-left-method-payment-item">
+                                        <input name="method-payment" type="radio" value="Thẻ ATM(OnePay)">
+                                        <label for="">Thanh toán bằng thẻ ATM(OnePay)</label>
+                                    </div>
+                                    <p style="color: #FD6670; font-weight:400; line-height: 150%; font-size: 20px;">
+                                        Lưu ý: Mọi giao dịch đều được bảo mật và mã hóa. Thông tin thẻ tín dụng sẽ không bao giờ được lưu lại.
+                                    </p>
+                                </div>
+                                <div class="" style="display: flex;flex-direction: row;">
+                                    <div class="" style="visibility: hidden;pointer-events: none;cursor: none;">
+                                        <input name="check" type="text" value="<?php echo $id_b; ?>">
+                                    </div>
+                                    <div class="" style="visibility: hidden;pointer-events: none;cursor: none;">
+                                        <input name="time" type="text" value="<?php echo date("d-m-Y H:i:s");?>">
+                                    </div>
+                                </div>
+                                <div class="btn_completePay">
+                                    <button type="submit" class="btn_complete_pay" style="width: 97%;">Hoàn tất thanh toán</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <?php
-                    $queryOrder = "";
-                    $price = 0;
-                    $resultOrder = "";
-                    if (isset($_GET['price']) && isset($_SESSION['id_customer'])) {
-                        $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
-                    } else if (isset($_GET['id_book'])) {
-                        $id = $_GET['id_book'];
-                        $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");
-                    }
-
-                    ?>
                     <div class="payment-content-right">
                         <div class="box_pay" style="padding-top: 10px; border: 1px solid #DFDFDF; margin-bottom: 10px; border-radius: 4px;">
                             <table class="table_content_pay">
@@ -121,7 +136,7 @@ if (isset($_SESSION['id_user'])) {
                         </div>
                         <div class="form_infor_user_payment">
                             <h4 style="padding: 10px 0px 0px 10px;">Thông tin người nhận</h4>
-                            <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
+                            <form class="form_insertDanhMuc" method="post" action="updateInforPay.php">
                                 <div class="form-group_infor">
                                     <label for="name">Tên người nhận</label>
                                     <input type="text" class="input_infor" name="name" value="<?php echo $name ?>">
@@ -135,15 +150,14 @@ if (isset($_SESSION['id_user'])) {
                                     <input type="a" class="input_infor" name="address" value="<?php echo $address ?>">
                                 </div>
                                 <div class="form-group_infor_button">
-                                    <a href="updateInforPay.php" style="width: 46%; margin: 5px;">
-                                        <button type="submit" style="width: 100%;" class="btn_seaching">Lưu xác nhận thông tin</button></a>
-                                    <a href="" style="width: 46%; margin: 5px;">
-                                        <button type="submit" style="width: 100%;" class="btn_seaching">Hoàn tất thanh toán</button></a>
+
+                                    <button type="submit" style="width: 100%;" class="btn_seaching">Lưu xác nhận thông tin</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
