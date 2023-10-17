@@ -448,7 +448,14 @@ label {
 	padding: 16px;
 }
 
-.detail_info_order{
+.detail_info_order_left{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+.detail_info_order_right{
+	width: 40%;
 	display: flex;
 	flex-direction: column;
 }
@@ -462,7 +469,12 @@ label {
 
 .info_title_order{
 	padding:0px 0px 10px 10px;
-	font-size: 17px;
+	font-size: 20px;
 	font-weight: 500;
 	line-height: 20px;
+}
+
+.box_order{
+	display: flex;
+	flex-direction: row;
 }

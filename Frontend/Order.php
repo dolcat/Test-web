@@ -56,22 +56,38 @@ if (isset($_SESSION['id_user'])) {
                         </div>
                         <div class="infor_detail_order">
                             <span class="info_title_order">Thông tin đơn hàng</span>
-                            <div class="detail_info_order">
-                                <div class="order_detail_column">
-                                    <label class="label">Tên đơn hàng: </label>
-                                    <label><?php echo $name?></label>
+                            <div class="box_order">
+                                <div class="detail_info_order_left">
+                                    <div class="order_detail_column">
+                                        <label class="label">Tên đơn hàng: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
+                                    <div class="order_detail_column">
+                                        <label class="label">Tổng tiền: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
+                                    <div class="order_detail_column">
+                                        <label class="label">Thời gian mua: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
+                                    <div class="order_detail_column">
+                                        <label class="label">Danh sách sản phẩm đã mua: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
                                 </div>
-                                <div class="order_detail_column">
-                                    <label class="label">Tổng tiền: </label>
-                                    <label><?php echo $name?></label>
-                                </div>
-                                <div class="order_detail_column">
-                                    <label class="label">Thời gian mua: </label>
-                                    <label><?php echo $name?></label>
-                                </div>
-                                <div class="order_detail_column">
-                                    <label class="label">Danh sách sản phẩm đã mua: </label>
-                                    <label><?php echo $name?></label>
+                                <div class="detail_info_order_right">
+                                    <div class="order_detail_column">
+                                        <label class="label">Phương thức mua hàng: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
+                                    <div class="order_detail_column">
+                                        <label class="label">Phương thức thanh toán: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
+                                    <div class="order_detail_column">
+                                        <label class="label">Trạng thái: </label>
+                                        <label><?php echo $name ?></label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
