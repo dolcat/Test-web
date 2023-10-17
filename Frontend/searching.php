@@ -55,7 +55,7 @@ include('header.php');
                     $keyword = "";
                     if (isset($_GET['key_word'])) {
                         $keyword = $_GET['key_word'];
-                        $sql = "SELECT * from book_list where title like '%" . $keyword . "%' order by id_book asc;";
+                        $sql = "SELECT * from book_list where title like '%" . $keyword . "%' OR author like '%" . $keyword . "%' OR bookstore like '%" . $keyword . "%' order by id_book asc;";
                     } else if(isset($_COOKIE['danhmuc'])) {
                         $keyword = $_COOKIE['danhmuc'];
                         $sql = "SELECT * from book_list where id_danhmuc = '$keyword'  order by id_book asc;";                       
