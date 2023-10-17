@@ -73,7 +73,7 @@ $row = mysqli_fetch_array($query);
                                 <div class="info">
                                     Giao đến 54 Triều Khúc, Thanh Xuân, Hà Nội
                                 </div>
-                                <span style="color: rgb(10, 104, 255);">Đổi</span>
+                                
                             </div>
                         </div>
                         <div class="container_note">
