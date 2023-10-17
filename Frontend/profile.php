@@ -17,8 +17,10 @@ if (isset($_SESSION['id_user'])) {
         $phone = $profile['phone'];
         $address = $profile['address'];
         $email = $profile['email'];
-    }
-} else {
+        
+    } 
+}
+else {
     $name = "Nhập họ tên";
     $user = "Vui lòng đăng nhập!";
     $phone = "Nhập số điện thoại";
@@ -120,42 +122,68 @@ if (isset($_SESSION['id_user'])) {
                                 </form>
                             </div>
                         </div>
+                        <div class="info_center"></div>
                         <div class="info_right">
-                            <span class="info_title" style="margin-left: 12px;">Đổi mật khẩu</span>
-                            <form class="frm_up_pass" action="changePass.php" method="post">
-                                <div class="form-control">
-                                    <div class="label_name">Mật khẩu cũ</div>
-                                    <div class="input_info name">
-                                        <input type="pass" class="input" name="pass_old" maxlength="10" placeholder="Nhập mật khẩu cũ" value="">
+							<form class="frm_up_pass" action="changePass.php" method="post">
+								<div class="form-control">
+                                        <div class="label_name">Mật khẩu cũ</div>
+                                        <div class="input_info name">
+                                            <input type="pass" class="input" name="pass_old"  maxlength="12" placeholder="Nhập mật khẩu cũ" value="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-control">
-                                    <div class="label_name">Mật khẩu mới</div>
-                                    <div class="input_info name">
-                                        <input type="pass" class="input" name="new_pass" maxlength="128" placeholder="Nhập mật khẩu mới" value="">
+                                    <div class="form-control">
+                                        <div class="label_name">Mật khẩu mới</div>
+                                        <div class="input_info name">
+                                            <input type="pass" class="input" name="new_pass"  maxlength="12" placeholder="Nhập mật khẩu mới" value="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-control">
-                                    <div class="label_name">Nhập lại mật khẩu</div>
-                                    <div class="input_info name">
-                                        <input type="pass" class="input" name="new_pass1" minlength="" maxlength="128" placeholder="Nhập lại mật khẩu" value="">
+									<div class="form-control">
+											<div class="label_name">Nhập lại mật khẩu</div>
+											<div class="input_info name">
+												<input type="pass" class="input" name="new_pass1"  maxlength="12" placeholder="Nhập lại mật khẩu" value="">
+											</div>
+									</div>
+                                    <div class="form-control">
+                                        <div class="label_name">&nbsp;</div>
+                                        <div class="input_info name">
+                                            <button class="btn_submit" type="submit">Đổi mật khẩu</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-control">
-                                    <div class="label_name">&nbsp;</div>
-                                    <div class="input_info name">
-                                        <button class="btn_submit" type="submit">Đổi mật khẩu</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+							</form>
+						</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php include("footer.php");
+<?php 
+	include("footer.php");
+	if (isset($_GET['checkpass'])) {
+    $checkpass = $_GET['checkpass'];
+    if ($checkpass == "a") {
+?>
+		<script>
+            alert("Đổi mật khẩu thành công");
+        </script>
+    <?php
+    } else if ($checkpass == "b") {
+    ?>
+        <script>
+            alert("Mật khẩu cũ không đúng! Vui lòng kiểm tra lại.");
+        </script>
+	<?php
+    } else if ($checkpass == "c") {
+    ?>
+        <script>
+            alert("Mật khẩu mới không khớp! Vui lòng kiểm tra lại.");
+        </script>
+<?php
+    }
+    unset($_GET['checkpass']);
+} else {
+    echo "ko co";
+}
 ?>
 </body>
 
