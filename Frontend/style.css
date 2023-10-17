@@ -511,3 +511,15 @@ footer {
 .copyright {
   text-align: center;
 }
+.order_book_list{
+	display: inline-flex;
+	width: 95%;
+	height: auto;
+	padding: 0px 5px 10px;
+}
+.order_book_list label{
+	margin: 0;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 150%;
+}
