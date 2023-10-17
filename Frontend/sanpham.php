@@ -21,7 +21,8 @@ $row = mysqli_fetch_array($query);
             grid-template-columns: 55% 45%;
             gap: 4px;
         }
-        .btn_insertCart:hover{
+
+        .btn_insertCart:hover {
             text-decoration: none;
             cursor: pointer;
         }
@@ -189,12 +190,14 @@ $row = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <div class="group_button_bc">
-                                <button class="button_bc_buy">
-                                    <span>Mua ngay</span>
-                                </button>
-                                <a href="insertToCart.php?id_book=<?php echo $row['id_book']?>" class="btn_insertCart" ><button class="button_bc_cart">
-                                    <span>Thêm vào giỏ</span>
-                                </button></a>
+                                <a href="completePay.php?id_book=<?php echo $row['id_book'] ?>" class="btn_insertCart">
+                                    <button class="button_bc_buy" >
+                                        <span>Mua ngay</span>
+                                    </button>
+                                </a>
+                                <a href="insertToCart.php?id_book=<?php echo $row['id_book'] ?>" class="btn_insertCart"><button class="button_bc_cart">
+                                        <span>Thêm vào giỏ</span>
+                                    </button></a>
                             </div>
                         </div>
                     </div>

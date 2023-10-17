@@ -104,7 +104,7 @@ $tong_tien = 0;
 								<td style="padding-right: 5px; font-size: 17px;"><?php echo $i -1 ?></td>
 							</tr>
 							<tr>
-								<td>Tổng tiền hàng</td>
+								<td>Tổng tiền </td>
 								<td>
 									<p><?php echo $tong_tien; ?> VNĐ</p>
 								</td>
@@ -120,7 +120,7 @@ $tong_tien = 0;
 						</div>
 						<div class="cart-content-right-button" style="padding-bottom: 10px;">
 							<a href="index.php"><button>TIẾP TỤC MUA SẮM</button></a>
-							<a href="completePay.php"><button>THANH TOÁN</button></a>
+							<a href="completePay.php?price=<?php echo $tong_tien?>"><button>THANH TOÁN</button></a>
 						</div>
 					</div>
 				</div>

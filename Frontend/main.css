@@ -468,6 +468,7 @@
 
 
 .button_bc_buy {
+  width: 100%;
   background: rgb(255, 66, 78);
   border-radius: 4px;
   border: none;

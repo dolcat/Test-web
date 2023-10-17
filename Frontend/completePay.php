@@ -62,8 +62,46 @@ include("header.php");
                             </div>
                         </div>
                     </div>
+                    <?php
+                    $queryOrder = ""; $price = 0;
+                    $resultOrder = "";
+                    if (isset($_GET['price']) && isset($_SESSION['id_customer'])) {
+                        $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
+                        
+                    } else if (isset($_GET['id_book'])) {
+                        $id = $_GET['id_book'];
+                        $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");
+                       
+                    }
 
+                    ?>
                     <div class="payment-content-right">
+                        <div class="box_pay" style="padding-top: 10px; border: 1px solid #DFDFDF; margin-bottom: 10px; border-radius: 4px;">
+                            <table class="table_content_pay">
+                                <tr>
+                                    <th colspan="2" style="font-size: 20px; padding: 0px 0px 10px;">Xác nhận thông tin đơn hàng</th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 17px; font-weight: 400; height: auto; width: fit-content;">Danh sách sản phẩm: </td>
+                                    <td style="padding-right: 5px; font-size: 17px;">
+                                    <?php 
+                                    if($queryOrder){
+                                        while($resultOrder = mysqli_fetch_array($queryOrder)){
+                                            echo $resultOrder['title'] .'; ';
+                                            $price += $resultOrder['price'];
+                                        }
+                                    }
+                                    ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tổng tiền đơn hàng: </td>
+                                    <td>
+                                        <?php echo $price?> VNĐ
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="form_infor_user_payment">
                             <h4 style="padding: 10px 0px 0px 10px;">Thông tin người nhận</h4>
                             <form class="form_insertDanhMuc" action="exeInsertDanhMuc.php" method="post">
