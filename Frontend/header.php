@@ -48,25 +48,25 @@ if (isset($_SESSION['id_customer'])) {
         <div class="grid">
             <nav class="header_navbar">
                 <ul class="header_navbar-list">
-                    <li class="header_navbar-item header_navbar-item--separate">Vào cửa hàng trên ứng dụng</li>
+                    <li class="header_navbar-item header_navbar-item--separate">Chúc 1 ngày tốt lành!</li>
                     <li class="header_navbar-item header_navbar-item--separate">
                         <span class="header_navbar-item_no-pointer">Kết nối</span>
-                        <a href="" class="header_navbar-icon-link">
+                        <a href="https://www.facebook.com/dwclc.ki" class="header_navbar-icon-link">
                             <i class="header_navbar-icon fa-brands fa-facebook"></i>
                         </a>
-                        <a href="" class="header_navbar-icon-link">
+                        <a href="https://github.com/ducloc1st" class="header_navbar-icon-link">
                             <i class="header_navbar-icon fa-brands fa-github"></i>
                         </a>
                     </li>
                 </ul>
                 <ul class="header_navbar-list">
                     <li class="header_navbar-item">
-                        <a href="" class="header_navbar-item-link">
+                        <a href="https://www.google.com/webhp?hl=vi&sa=X&ved=0ahUKEwiJifWD1P2BAxXBrVYBHV4_DewQPAgJ" class="header_navbar-item-link">
                             <i class="header_navbar-icon fa-regular fa-circle-question"></i>
                             Trợ giúp</a>
                     </li>
                     <li class="header_navbar-item">
-                        <a href="" class="header_navbar-item-link">
+                        <a href="https://www.youtube.com/" class="header_navbar-item-link">
                             <i class="header_navbar-icon fa-solid fa-bell"></i>
                             Thông báo</a>
                     </li>

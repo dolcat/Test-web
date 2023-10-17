@@ -11,7 +11,7 @@
   position: relative;
   height: var(--header-height);
   background-image: linear-gradient(0,#1fa4f1,#206bdc);
-  padding: 8px 0;
+  padding-top: 8px;
 }
 
 .header_navbar{
@@ -465,6 +465,7 @@ main {
 }
 
 footer {
+  margin-top: 20px;
   background-color: #FFFFFF;
 }
 
@@ -512,12 +513,14 @@ footer {
   text-align: center;
 }
 .order_book_list{
-	display: inline-flex;
+  margin-left: 5px;;
+	display: contents;
 	width: 95%;
 	height: auto;
 	padding: 0px 5px 10px;
 }
 .order_book_list label{
+  padding-right: 3px;
 	margin: 0;
 	font-size: 17px;
 	font-weight: 400;

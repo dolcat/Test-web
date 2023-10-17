@@ -343,6 +343,7 @@
   border-radius: 8px;
   padding: 16px;
   gap: 4px;
+  margin-bottom: 20px;
 }
 
 .summary_label {
@@ -522,7 +523,6 @@
 /* Profile */
 
 .profile_content {
-  margin-top: 10px;
   background-color: #F5F5FA;
   padding-bottom: 10px;
 }

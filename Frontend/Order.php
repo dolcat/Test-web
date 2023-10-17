@@ -87,7 +87,7 @@ if (isset($_SESSION['id_user'])) {
 								
                             </div>
 								<div class="order_book_list">
-                                        <label class="label">Danh sách sản phẩm đã mua: </label>
+                                        <label class="label" >Danh sách sản phẩm đã mua: </label>
 										<?php
 											$id_order = $don_hang['id_order'];
 											$sql_array = "SELECT * FROM array_book INNER JOIN book_list ON array_book.id_book = book_list.id_book WHERE id_order = '$id_order'";

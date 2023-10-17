@@ -40,7 +40,7 @@ $queryXemdonhang = mysqli_query($conn, "SELECT * FROM array_book INNER JOIN book
                 </li>
             </ul>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
                     <table class="table" style="border-radius: 8px;">
@@ -51,9 +51,9 @@ $queryXemdonhang = mysqli_query($conn, "SELECT * FROM array_book INNER JOIN book
                             <tr>
                                 <th class="col-md-1">ID đơn hàng</th>
 								<th class="col-md-1">ID khách hàng</th>
-								<th class="col-md-1">Tên sản phẩm</th>
-                                <th class="col-md-2">Số lượng</th>
-                                <th class="col-md-1">Tổng tiền</th>
+								<th class="col-md-3">Tên sản phẩm</th>
+                                <th class="col-md-1">Số lượng</th>
+                                <th class="col-md-1">Tổng tiền (VNĐ)</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -52,7 +52,8 @@ $taikhoan = mysqli_fetch_array($queryChangeTK);
                             <tr>
                                 <th class="col-md-1">ID</th>
                                 <th class="col-md-2">Tài khoản</th>
-                                <th class="col-md-1">Password</th>
+                                <th class="col-md-1">Mật khẩu</th>
+                                <th class="col-md-2">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,11 +80,11 @@ $taikhoan = mysqli_fetch_array($queryChangeTK);
                 <h4>Form sửa thông tin tài khoản</h4>
                 <form class="form_insertTaiKhoan" action="exeChangeTK.php" method="post">
                     <div class="form-group">
-                        <label for="user">User</label>
+                        <label for="user">Tài khoản</label>
                         <input type="text" class="form-control" name="user" value="<?php echo $taikhoan['user'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Mật khẩu</label>
                         <input type="text" class="form-control" name="password" value="<?php echo $taikhoan['password'] ?>">
                     </div>
                     <div class="form-group">

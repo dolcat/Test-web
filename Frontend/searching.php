@@ -13,7 +13,7 @@ unset($_SESSION['stateArr']);
         <div class="grid">
             <div class="grid_row">
                 <div class="grid_column-10">
-                    <div class="filter">
+                    <!-- <div class="filter">
                         <div class="filter_item filter_author">
                             <span class="filter_item_label">Tác giả</span>
                             <div class="filter_item_btn">
@@ -49,7 +49,7 @@ unset($_SESSION['stateArr']);
                                 <i class="fa-solid fa-filter"></i> Tất cả
                             </button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <?php
                     $sql = "";

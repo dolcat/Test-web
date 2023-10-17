@@ -45,7 +45,8 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
                             <tr>
                                 <th class="col-md-1">ID</th>
                                 <th class="col-md-2">Tài khoản</th>
-                                <th class="col-md-1">Password</th>
+                                <th class="col-md-1">Mật khẩu</th>
+                                <th class="col-md-2">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,11 +72,11 @@ $query = mysqli_query($conn, $sqlTaiKhoan);
                 <h4>Form thêm tài khoản</h4>
             <form class="form_insertTaiKhoan" action="exeInsertTaiKhoan.php" method="post">
                 <div class="form-group">
-                    <label for="user">user</label>
+                    <label for="user">Tài khoản</label>
                     <input type="text" class="form-control" name="user" value="">
                 </div>
                 <div class="form-group">
-                    <label for="password">password</label>
+                    <label for="password">Mật khẩu</label>
                     <input type="text" class="form-control" name="password" value="">
                 </div>
                 <div class="form-group">

@@ -36,7 +36,7 @@ if (isset($_SESSION['stateArr']) && isset($_SESSION['id_customer'])) {
 
     $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list`,`cart` WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;");
     $id_b = "cus";
-} else if ($_SESSION['stateOne'] && isset($_SESSION['id_customer'])) {
+} else if (isset($_SESSION['stateOne']) && isset($_SESSION['id_customer'])) {
     $id = $_SESSION['stateOne'];
     $id_b = $id;
     $queryOrder = mysqli_query($conn, "SELECT title, price FROM `book_list` WHERE id_book = '$id'");

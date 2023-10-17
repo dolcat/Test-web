@@ -9,6 +9,12 @@ $query = mysqli_query($conn, $sqldonhang);
             margin: 10px 0px 10px 10px;
             
         }
+        .btn_chucnang{
+            display: flex; flex-direction: row;
+        }
+        .btn_chucnang a{
+            padding: 5px;
+        }
     </style>
 </head>
 
@@ -35,7 +41,7 @@ $query = mysqli_query($conn, $sqldonhang);
                 </li>
             </ul>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <table class="table" style="border-radius: 8px;">
@@ -46,12 +52,13 @@ $query = mysqli_query($conn, $sqldonhang);
                             <tr>
                                 <th class="col-md-1">ID đơn hàng</th>
 								<th class="col-md-1">ID khách hàng</th>
-                                <th class="col-md-2">Tên khách hàng</th>
-								<th class="col-md-2">Tổng tiền</th>
+                                <th class="col-md-1">Tên đơn hàng</th>
+								<th class="col-md-1">Tổng tiền (VNĐ)</th>
 								<th class="col-md-2">Phương thức thanh toán</th>
+                                <th class="col-md-2">Phương thức vận chuyển</th>
 								<th class="col-md-2">Ngày đặt</th>
 								<th class="col-md-2">Trạng thái</th>
-                                <th class="col-md-1">Chức năng</th>
+                                <th class="col-md-3">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,12 +66,13 @@ $query = mysqli_query($conn, $sqldonhang);
                                 <tr>
                                     <td class="col-md-1"><?php echo $row['id_order'] ?></td>
 									<td class="col-md-1"><?php echo $row['id_customer'] ?></td>
-                                    <td class="col-md-2"><?php echo $row['name'] ?></td>
-									<td class="col-md-2"><?php echo $row['total_money'] ?></td>
+                                    <td class="col-md-1"><?php echo $row['name_order'] ?></td>
+									<td class="col-md-1"><?php echo $row['total_money'] ?></td>
 									<td class="col-md-2"><?php echo $row['payment'] ?></td>
+                                    <td class="col-md-2"><?php echo $row['delivery_method'] ?></td>
 									<td class="col-md-2"><?php echo $row['date'] ?></td>
 									<td class="col-md-2"><?php echo $row['status'] ?></td>
-                                    <td class="col-md-2">
+                                    <td class="col-md-3 btn_chucnang">
                                         <a href="Xemdonhang.php?id_order=<?php echo $row['id_order'] ?>"> <button class="btn btn-primary" type="submit" style="margin-bottom: 2px;">Xem</button></a>
 										<a href="exeUpdateStatus.php?id_order=<?php echo $row['id_order'] ?>"> <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn cập nhật trạng thái của đơn hàng?" onclick="btn_delete()">UP</button></a>
                                         <a href="exeDeleteorder.php?id_order=<?php echo $row['id_order'] ?>"> <button class="btn btn-danger btn_del" data-confirm="Bạn có chắc chắn muốn xóa đơn hàng?" onclick="btn_delete()">Xóa</button></a>
