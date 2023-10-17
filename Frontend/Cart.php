@@ -1,5 +1,7 @@
 <?php
 include('header.php');
+unset($_SESSION['stateOne']);
+unset($_SESSION['stateArr']);
 $cart = "";
 if (isset($_SESSION['id_customer'])) {
 	$sql = "SELECT DISTINCT * FROM `book_list`,cart WHERE cart.id_customer = '$id_customer' AND book_list.id_book = cart.id_book;";

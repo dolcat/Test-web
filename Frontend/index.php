@@ -1,5 +1,7 @@
 <?php
 include('header.php');
+unset($_SESSION['stateOne']);
+unset($_SESSION['stateArr']);
 ?>
 
 <head>
@@ -126,7 +128,7 @@ if (isset($_GET['check'])) {
     } else if ($check == "b") {
     ?>
         <script>
-            alert("Thêm vào giỏ hàng thành công!\nMời bạn tiếp tục mua sắm!");
+            alert("Sản phẩm đã có sẵn trong giỏ hàng!\nĐã thêm số lượng trong giỏ hàng!");
         </script>
 <?php
     }

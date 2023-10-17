@@ -192,6 +192,7 @@
 .table_content_pay{
 	width: 95%;
 	margin: 10px;
+	display: inline-table;
 }
 
 

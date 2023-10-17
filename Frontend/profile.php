@@ -1,5 +1,7 @@
 <?php
 include("header.php");
+unset($_SESSION['stateOne']);
+unset($_SESSION['stateArr']);
 $user = "";
 $name = "";
 $phone = "";
