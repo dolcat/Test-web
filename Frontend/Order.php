@@ -35,7 +35,7 @@ if (isset($_SESSION['id_user'])) {
                     <div class="label_info">Đơn hàng</div>
                     <div class="info_list_order">
                         <div class="form_searching">
-                            <form action="" method="GET">
+                            <form action="searchingOrder.php" method="GET">
                                 <div class="order_searching_item">
                                     <input type="text" class="header_search_input" placeholder="Tìm kiếm đơn hàng của bạn..." name="key_word">
                                     <button type="submit">Tìm kiếm</button>
