@@ -102,13 +102,13 @@ else {
                                     <div class="form-control">
                                         <div class="label_name">Số điện thoại</div>
                                         <div class="input_info name">
-                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="">
+                                            <input type="tel" class="input" name="phone" maxlength="10" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">
                                         <div class="label_name">Email</div>
                                         <div class="input_info name">
-                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="">
+                                            <input type="email" class="input" name="email" maxlength="128" placeholder="Nhập email" value="<?php echo $email ?>">
                                         </div>
                                     </div>
                                     <div class="form-control">
