@@ -1,6 +1,5 @@
 <?php
 include('header.php');
-include('connect.php');
 
 if(isset($_COOKIE['danhmuc'])){
     $id = $_COOKIE['danhmuc'];
